@@ -1,0 +1,32 @@
+md-sidenav {
+  position: relative;
+  transform: translate3d(0,0,0);
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  min-width: 15vw;
+  outline: 0;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  transform: translate3d(-100%,0,0);
+}
+
+.menu-button{
+  background: #f3f3f3;
+  height: 100%;
+  width: 60px;
+  min-width: 60px;
+  border-radius: unset;
+  flex-direction: row;
+  display: flex;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 
+              0 4px 25px 0px rgba(0, 0, 0, 0.12), 
+              0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button md-icon{
+  line-height: 100vh;
+}

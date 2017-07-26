@@ -1,0 +1,28 @@
+<md-sidenav-container fullscreen>
+
+  <md-sidenav #sidenav mode="over">
+    <app-navigation></app-navigation>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <span>CogQuiz</span>
+  </md-toolbar>
+  
+  <a class="menu-button" md-button (click)='sidenav.toggle();'><md-icon>play_arrow</md-icon></a>
+
+  <a href="#" 
+     data-toggle="popover"
+     data-placement="left"
+     title="Popover Header" 
+     data-content="Some content inside the popover"
+     style="position: fixed;
+    right: 0;
+    top: 132px;">
+    Toggle popover
+  </a>
+  
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+</md-sidenav-container>
