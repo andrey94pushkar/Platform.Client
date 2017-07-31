@@ -8,20 +8,48 @@
     <span>CogQuiz</span>
 
     <div class="mat-toolbar-right">
-      <a href="#" class=""><md-icon>notifications</md-icon></a>
-      <a href="#" class=""><md-icon>person</md-icon></a>
+      <button md-icon-button [mdMenuTriggerFor]="notifications">
+        <md-icon>notifications</md-icon>
+      </button>
+      <md-menu #notifications="mdMenu">
+        <button md-menu-item>
+          <md-icon>dialpad</md-icon>
+          <span>Redial</span>
+        </button>
+        <button md-menu-item disabled>
+          <md-icon>voicemail</md-icon>
+          <span>Check voicemail</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>notifications_off</md-icon>
+          <span>Disable alerts</span>
+        </button>
+      </md-menu>
+      <button md-icon-button [mdMenuTriggerFor]="account">
+        <md-icon>person</md-icon>
+      </button>
+      <md-menu #account="mdMenu">
+        <button md-menu-item>
+          <md-icon>account_circle</md-icon>
+          <span>Profile</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>exit_to_app</md-icon>
+          <span>Logout</span>
+        </button>
+      </md-menu>
     </div>
   </md-toolbar>
   
   <a class="menu-button" md-button (click)='sidenav.toggle();'><md-icon>play_arrow</md-icon></a>
 
-  <a class="popover-button" href="#" 
+ <!-- <a class="popover-button" href="#" 
      data-toggle="popover"
      data-placement="left"
      title="Popover Header"
      data-content="Some content inside the popover">
     <md-icon>settings</md-icon>
-  </a>
+  </a>-->
   
   <div>
     <router-outlet></router-outlet>
