@@ -7,8 +7,10 @@
   <md-toolbar color="primary">
     <span>CogQuiz</span>
 
-    <a md-button ><md-icon>play_arrow</md-icon></a>
-    <a md-button ><md-icon>play_arrow</md-icon></a>
+    <div class="mat-toolbar-right">
+      <a href="#" class=""><md-icon>notifications</md-icon></a>
+      <a href="#" class=""><md-icon>person</md-icon></a>
+    </div>
   </md-toolbar>
   
   <a class="menu-button" md-button (click)='sidenav.toggle();'><md-icon>play_arrow</md-icon></a>
@@ -16,9 +18,9 @@
   <a class="popover-button" href="#" 
      data-toggle="popover"
      data-placement="left"
-     title="Popover Header" 
+     title="Popover Header"
      data-content="Some content inside the popover">
-    Toggle popover
+    <md-icon>settings</md-icon>
   </a>
   
   <div>

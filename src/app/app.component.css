@@ -36,3 +36,16 @@ md-sidenav {
   right: 0;
   top: 132px;
 }
+
+.mat-toolbar-right{
+  display: inline-flex;
+}
+
+.mat-toolbar-right a{
+  text-decoration: none;
+  color: white;
+}
+
+.mat-toolbar-right a .mat-icon{
+  display: block;
+}
