@@ -1,4 +1,4 @@
-import { AppNavigationComponent } from './common/app-navigation/app-navigation.component';
+import { NavigationComponent } from './common/navigation/navigation.component';
 import { Component } from '@angular/core';
 
 @Component({
