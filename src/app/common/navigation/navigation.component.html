@@ -7,17 +7,17 @@
         </a>
       </li>
       <li>
-        <a class="element" routerLinkActive="active-link" [routerLink]="['/login']">
-          <md-icon>input</md-icon> Log in
+        <a class="element" routerLinkActive="active-link" (click)="logout()">
+          <md-icon>input</md-icon> Logout
         </a>
       </li>
-      <li class="dropdown">
+      <!-- <li class="dropdown">
         <a href="">qwer </a>
         <ul >
           <li><a href="">dsdf</a></li>
           <li><a href="">asdasd</a></li>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </div>
