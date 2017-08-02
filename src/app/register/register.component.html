@@ -1,29 +1,33 @@
-<form class="example-form">
+<form class="example-form" (submit)="register()">
 
   <md-input-container class="example-full-width">
     <input mdInput disabled value="Registration form">
   </md-input-container>
 
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Login" required>
+  </md-input-container>
+
   <table class="example-full-width" cellspacing="0"><tr>
     <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="First name">
+      <input mdInput placeholder="First name" required>
     </md-input-container></td>
     <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="Last Name">
+      <input mdInput placeholder="Last Name" required>
     </md-input-container></td>
   </tr></table>
   
   <md-input-container class="example-full-width">
-    <input mdInput placeholder="Email">
+    <input mdInput placeholder="Email" required>
   </md-input-container>
   <md-input-container class="example-full-width">
-    <input mdInput placeholder="Password" type="password">
+    <input mdInput placeholder="Password" type="password" required>
   </md-input-container>
   <md-input-container class="example-full-width">
-    <input mdInput placeholder="Confirm password" type="password">
+    <input mdInput placeholder="Confirm password" type="password" required>
   </md-input-container>
 
   <div>
-    <button md-raised-button>Continue</button>
+    <button type="submit" md-raised-button>Continue</button>
   </div>
 </form>
