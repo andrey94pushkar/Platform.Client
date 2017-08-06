@@ -1,9 +1,19 @@
 .form-container {
-    width: 700px;
+    width: 100%;
     margin: 0 auto;
+    text-align: justify;
 }
 
 .full-width {
+    width: 400px;
+    display: inline-block;
+}
+
+.double-width {
+    width: 800px;
+}
+
+.screen-width{
     width: 100%;
 }
 
@@ -31,19 +41,17 @@
     text-align: center;
 }
 
-.hr {
-    border-bottom: 1px solid grey;
-    opacity: 0.38;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .mat-select {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .select-text {
     color: rgba(0,0,0,.38);
+}
+
+.input-small{
+    width: 100px;
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 768px) {
