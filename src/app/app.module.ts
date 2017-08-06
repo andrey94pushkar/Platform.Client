@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, 
+         MdNativeDateModule,
+         MdRadioModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    MdNativeDateModule,
+    MdRadioModule,
     BrowserAnimationsModule
   ],
   providers: [],

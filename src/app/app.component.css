@@ -43,6 +43,5 @@ md-sidenav {
 }
 
 .content{
-  padding-top: 79px;
-  padding-left: 75px;
+  padding: 79px 15px 15px 75px;
 }
