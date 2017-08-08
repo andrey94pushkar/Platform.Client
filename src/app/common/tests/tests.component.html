@@ -1,0 +1,39 @@
+<div class="example-container mat-elevation-z8">
+
+    <div class="example-header">
+        <md-input-container floatPlaceholder="never">
+            <input mdInput #filter placeholder="Filter tests">
+        </md-input-container>
+    </div>
+
+    <md-table #table [dataSource]="dataSource">
+        <!-- ID Column -->
+        <ng-container cdkColumnDef="userId">
+            <md-header-cell *cdkHeaderCellDef> ID </md-header-cell>
+            <md-cell *cdkCellDef="let row"> {{row.id}} </md-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container cdkColumnDef="userName">
+            <md-header-cell *cdkHeaderCellDef> Test Name </md-header-cell>
+            <md-cell *cdkCellDef="let row"> Tower of London </md-cell>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container cdkColumnDef="paidOn">
+            <md-header-cell *cdkHeaderCellDef> Paid On </md-header-cell>
+            <md-cell *cdkCellDef="let row"> 01.08.2017 </md-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container cdkColumnDef="start">
+            <md-header-cell *cdkHeaderCellDef>Start</md-header-cell>
+            <md-cell *cdkCellDef="let row">
+                <a href="">Start</a>
+            </md-cell>
+        </ng-container>
+
+        <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+    </md-table>
+</div>
