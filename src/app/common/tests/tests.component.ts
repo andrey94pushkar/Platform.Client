@@ -1,5 +1,6 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {DataSource} from '@angular/cdk';
+import {MdPaginator} from '@angular/material';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
@@ -21,9 +22,10 @@ export class TestsComponent {
   dataSource: ExampleDataSource | null;
 
   @ViewChild('filter') filter: ElementRef;
+  @ViewChild(MdPaginator) paginator: MdPaginator;
 
   ngOnInit() {
-    this.dataSource = new ExampleDataSource(this.exampleDatabase);
+    this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
     Observable.fromEvent(this.filter.nativeElement, 'keyup')
         .debounceTime(150)
         .distinctUntilChanged()
@@ -82,7 +84,7 @@ export class ExampleDataSource extends DataSource<any> {
   get filter(): string { return this._filterChange.value; }
   set filter(filter: string) { this._filterChange.next(filter); }
 
-  constructor(private _exampleDatabase: ExampleDatabase) {
+  constructor(private _exampleDatabase: ExampleDatabase, private _paginator: MdPaginator) {
     super();
   }
 
@@ -91,12 +93,16 @@ export class ExampleDataSource extends DataSource<any> {
     const displayDataChanges = [
       this._exampleDatabase.dataChange,
       this._filterChange,
+      this._paginator.page,
     ];
 
     return Observable.merge(...displayDataChanges).map(() => {
+      const data = this._exampleDatabase.data.slice();
+      const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
+      
       return this._exampleDatabase.data.slice().filter((item: UserData) => {
         let searchStr = (item.name + item.start).toLowerCase();
-        return searchStr.indexOf(this.filter.toLowerCase()) != -1;
+        return searchStr.indexOf(this.filter.toLowerCase()) != -1, data.splice(startIndex, this._paginator.pageSize);
       });
     });
   }
