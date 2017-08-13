@@ -17,6 +17,7 @@ import {ColumnComponent} from './common/grid/column.component';
 // pages
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -27,6 +28,7 @@ import { ProfileComponent } from './profile/profile.component';
     GridComponent,
     DashboardComponent,
     LoginComponent,
+    LandingComponent,
     RegisterComponent,
     ProfileComponent
   ],

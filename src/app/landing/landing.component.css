@@ -1,0 +1,15 @@
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.head-text{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 36px;
+}
+
+@media screen and (max-width: 1200px){
+    .wrapper{
+        width: 100%;
+    }
+}
