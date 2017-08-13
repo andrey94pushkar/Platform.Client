@@ -41,7 +41,7 @@
     </div>
   </md-toolbar>
 
-  <a class="menu-button" md-button (click)='sidenav.toggle();'><md-icon>play_arrow</md-icon></a>
+  <a class="menu-button" md-button (click)='sidenav.open();' (clickOutside)="sidenav.close()"><md-icon>play_arrow</md-icon></a>
 
   <div class="content">
     <router-outlet></router-outlet>
