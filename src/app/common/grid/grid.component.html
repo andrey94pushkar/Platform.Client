@@ -2,7 +2,7 @@
 
     <div class="example-header">
         <md-input-container floatPlaceholder="never">
-            <input mdInput #filter placeholder="Filter tests">
+            <input mdInput #filter placeholder="filter">
         </md-input-container>
     </div>
 
@@ -25,7 +25,7 @@
             <md-cell *cdkCellDef="let row"> 01.08.2017 </md-cell>
         </ng-container>
 
-        <!-- Color Column -->
+        <!-- Action Column -->
         <ng-container cdkColumnDef="start">
             <md-header-cell *cdkHeaderCellDef>Start</md-header-cell>
             <md-cell *cdkCellDef="let row">
