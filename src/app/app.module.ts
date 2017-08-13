@@ -12,6 +12,7 @@ import { NavigationComponent } from './common/navigation/navigation.component';
 import { TestsComponent } from './common/tests/tests.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -22,6 +23,7 @@ import { ProfileComponent } from './profile/profile.component';
     TestsComponent,
     DashboardComponent,
     LoginComponent,
+    LandingComponent,
     RegisterComponent,
     ProfileComponent
   ],
