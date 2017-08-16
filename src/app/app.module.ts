@@ -8,7 +8,7 @@ import {
   MdRadioModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ClickOutsideModule } from 'ng-click-outside';
+/*import { ClickOutsideModule } from 'ng-click-outside';*/
 
 // common
 import { AppRoutingModule } from './app-routing.module';
@@ -43,8 +43,8 @@ import { ProfileComponent } from './profile/profile.component';
     MdNativeDateModule,
     MdRadioModule,
     BrowserAnimationsModule,
-    CdkTableModule,
-    ClickOutsideModule
+    CdkTableModule
+    /*ClickOutsideModule*/
   ],
   providers: [],
   bootstrap: [AppComponent]
