@@ -1,4 +1,4 @@
-<form class="example-form" (submit)="register()">
+<form class="example-form" (submit)="register($event)">
 
   <md-input-container class="example-full-width">
     <input mdInput disabled value="Registration form">
@@ -16,7 +16,7 @@
       <input mdInput placeholder="Last Name" required>
     </md-input-container></td>
   </tr></table>
-  
+
   <md-input-container class="example-full-width">
     <input mdInput placeholder="Email" required>
   </md-input-container>

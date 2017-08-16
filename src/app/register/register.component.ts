@@ -13,7 +13,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  register(){
+  register(e) {
+    e.preventDefault();
     this.router.navigate(['/dashboard']);
   }
 

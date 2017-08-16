@@ -1,4 +1,4 @@
-/* md-sidenav {
+md-sidenav {
   position: relative;
   transform: translate3d(0,0,0);
   display: block;
@@ -44,4 +44,4 @@
 
 .content{
   padding: 79px 15px 15px 75px;
-} */
+}

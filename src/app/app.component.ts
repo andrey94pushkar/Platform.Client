@@ -1,4 +1,4 @@
-import { NavigationComponent } from './common/navigation/navigation.component';
+import { NavigationComponent } from './_directives/navigation/navigation.component';
 import { Component } from '@angular/core';
 
 @Component({
