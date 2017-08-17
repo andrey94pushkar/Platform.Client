@@ -58,7 +58,6 @@ import { ProfileComponent } from './profile/profile.component';
     MdNativeDateModule,
     MdRadioModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
     CdkTableModule,
     ClickOutsideModule,
     HttpModule
@@ -66,10 +65,6 @@ import { ProfileComponent } from './profile/profile.component';
   providers: [
     AuthGuard,
     AuthenticationService,
-=======
-    CdkTableModule
-    /*ClickOutsideModule*/
->>>>>>> 491473db3eb3eaf0a2497a959128668775ec83cd
   ],
   bootstrap: [AppComponent]
 })
