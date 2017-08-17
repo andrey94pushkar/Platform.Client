@@ -1,11 +1,64 @@
+*{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
 .wrapper{
-    width: 1200px;
+    width: 1170px;
     margin: 0 auto;
 }
 
 .head-text{
-    font-family: Roboto,"Helvetica Neue",sans-serif;
     font-size: 36px;
+}
+
+.head-text-sm{
+    font-size: 20px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.col-50{
+    width: 50%;
+    float: left;
+}
+
+.col-25{
+    width: 25%;
+    float: left;
+}
+
+.clearfix{
+    clear: both;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.back-gray{
+    padding: 15px 0;
+    background: rgba(197,202,233,.3);
+    border-bottom: 2px solid #3f51b5;
+}
+
+.back-gray .text-center{
+    padding: 0 15px;
+}
+
+footer{
+    padding: 10px;
+    background: #3f51b5;
+}
+
+footer .copyright{
+    font-size: 12px;
+    color: hsla(0,0%,100%,.87);
 }
 
 @media screen and (max-width: 1200px){

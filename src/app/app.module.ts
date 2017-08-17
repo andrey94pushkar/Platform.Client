@@ -8,8 +8,12 @@ import {
   MdRadioModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { ClickOutsideModule } from 'ng-click-outside';
 import { HttpModule } from '@angular/http';
+=======
+/*import { ClickOutsideModule } from 'ng-click-outside';*/
+>>>>>>> 491473db3eb3eaf0a2497a959128668775ec83cd
 
 // common
 import { AppRoutingModule } from './app-routing.module';
@@ -54,6 +58,7 @@ import { ProfileComponent } from './profile/profile.component';
     MdNativeDateModule,
     MdRadioModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
     CdkTableModule,
     ClickOutsideModule,
     HttpModule
@@ -61,6 +66,10 @@ import { ProfileComponent } from './profile/profile.component';
   providers: [
     AuthGuard,
     AuthenticationService,
+=======
+    CdkTableModule
+    /*ClickOutsideModule*/
+>>>>>>> 491473db3eb3eaf0a2497a959128668775ec83cd
   ],
   bootstrap: [AppComponent]
 })
