@@ -21,7 +21,7 @@ const PRIVATE_ROUTES: Routes = [
 ];
 
 const ROUTES: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full', },
+  { path: '', redirectTo: '/landing', pathMatch: 'full', },
   { path: '', component: PublicComponent, children: PUBLIC_ROUTES },
   { path: '', component: PrivateComponent, canActivate: [AuthGuard], children: PRIVATE_ROUTES }
 ];
