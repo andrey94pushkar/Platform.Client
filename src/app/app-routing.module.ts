@@ -21,23 +21,11 @@ const PRIVATE_ROUTES: Routes = [
 ];
 
 const ROUTES: Routes = [
-  { path: '', redirectTo: '/landing', pathMatch: 'full', },
+  { path: '', redirectTo: '/login', pathMatch: 'full', },
   { path: '', component: PublicComponent, children: PUBLIC_ROUTES },
-  { path: '', component: PrivateComponent, canActivate: [AuthGuard], children: PRIVATE_ROUTES }
+  { path: '', component: PrivateComponent, canActivate: [AuthGuard], children: PRIVATE_ROUTES },
+  { path: '**', redirectTo: '/login', pathMatch: 'full', }
 ];
-
-
-
-// const ROUTES: Routes = [
-//   { path: 'login', component: LoginComponent },
-//   { path: 'register', component: RegisterComponent },
-//   { path: 'landing', component: LandingComponent },
-//   { path: '', redirectTo: '/landing', pathMatch: 'full' },
-//   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-//   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-//   // otherwise redirect to home
-//   { path: '**', redirectTo: '' }
-// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(ROUTES)],

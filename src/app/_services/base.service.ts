@@ -6,6 +6,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BaseService {
   protected apiUrl = 'http://api.platform.com.ua';
+  private headers = new Headers({'Content-Type': 'application/json'});
+  protected options = new RequestOptions({ headers: this.headers });
 
   private token() {
         // create authorization header with jwt token

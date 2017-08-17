@@ -2,14 +2,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk';
-import {
-  MaterialModule,
-  MdNativeDateModule,
-  MdRadioModule
-} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule, MdNativeDateModule, MdRadioModule } from '@angular/material';
 
 // common
 import { AppRoutingModule } from './app-routing.module';
@@ -20,15 +17,13 @@ import { AuthGuard } from './_guards/auth.guard';
 import { AuthenticationService } from './_services/auth.service';
 
 // pages
-import {
-  PublicComponent,
-  PrivateComponent
-} from './_layouts/index';
+import { PublicComponent, PrivateComponent } from './_layouts/index';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+
 
 
 
@@ -56,7 +51,8 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     CdkTableModule,
     ClickOutsideModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [
     AuthGuard,
