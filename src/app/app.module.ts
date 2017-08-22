@@ -22,7 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
 
 
 
@@ -40,7 +40,10 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     LandingComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    InfoComponent,
+    TestsComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

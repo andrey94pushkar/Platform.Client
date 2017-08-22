@@ -1,0 +1,73 @@
+.form-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.full-width {
+  width: 400px;
+  display: inline-block;
+}
+
+.double-width {
+  width: 800px;
+}
+
+.screen-width{
+  width: 100%;
+}
+
+.half-width{
+  width: 50%;
+}
+
+.date-time {
+  width: 33%;
+}
+
+.radio-button {
+margin: 5px;
+}
+
+.selected-value {
+margin: 15px 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mat-select {
+  margin-bottom: 22px;
+}
+
+.select-text {
+  color: rgba(0,0,0,.38);
+}
+
+.input-small{
+  width: 100px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+      width: 100%;
+  }
+
+  .half-width{
+      width: 100%;
+  }
+
+  td {
+      display: block;
+  }
+
+  .date-time {
+      width: 100%;
+  }
+}
