@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MdPaginator, MdSort } from '@angular/material';
 
 // data
@@ -8,6 +8,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/observable/fromEvent';
 
 
 @Component({
@@ -23,10 +26,18 @@ export class GridComponent implements OnInit {
 
   @ViewChild(MdPaginator) paginator: MdPaginator;
   @ViewChild(MdSort) sort: MdSort;
+  @ViewChild('filter') filter: ElementRef;
 
   ngOnInit() {
     this.displayedColumns = ['id', 'name', 'progress', 'color'];
     this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator, this.sort);
+    Observable.fromEvent(this.filter.nativeElement, 'keyup')
+      .debounceTime(150)
+      .distinctUntilChanged()
+      .subscribe(() => {
+        if (!this.dataSource) { return; }
+        this.dataSource.filter = this.filter.nativeElement.value;
+      });
   }
 }
 
@@ -88,13 +99,17 @@ export class ExampleDataSource extends DataSource<any> {
   constructor(private _exampleDatabase: ExampleDatabase, private _paginator: MdPaginator, private _sort: MdSort) {
     super();
   }
+  _filterChange = new BehaviorSubject('');
+  get filter(): string { return this._filterChange.value; }
+  set filter(filter: string) { this._filterChange.next(filter); }
 
   /** Connect function called by the table to retrieve one stream containing the data to render. */
   connect(): Observable<UserData[]> {
     const displayDataChanges = [
       this._exampleDatabase.dataChange,
       this._paginator.page,
-      this._sort.mdSortChange
+      this._sort.mdSortChange,
+      this._filterChange
     ];
 
     return Observable.merge(...displayDataChanges).map(() => {
@@ -109,8 +124,17 @@ export class ExampleDataSource extends DataSource<any> {
   disconnect() { }
 
   getSortedData(): UserData[] {
-    const data = this._exampleDatabase.data.slice();
-    if (!this._sort.active || this._sort.direction == '') { return data; }
+    const data = this._exampleDatabase.data.slice().filter((item: UserData) => {
+      let searchStr = '';
+      for (const property in item) {
+        if (item.hasOwnProperty(property)) {
+          searchStr = searchStr + item[property];
+        }
+      }
+      searchStr = searchStr.toLowerCase();
+      return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
+    });
+    if (!this._sort.active || this._sort.direction === '') { return data; }
 
     return data.sort((a, b) => {
       const propertyA = a[this._sort.active];
