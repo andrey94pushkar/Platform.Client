@@ -12,7 +12,6 @@ import { MaterialModule, MdNativeDateModule, MdRadioModule } from '@angular/mate
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './_directives/navigation/navigation.component';
-import { GridComponent } from './_directives/grid/grid.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { AuthenticationService } from './_services/auth.service';
 
@@ -35,7 +34,6 @@ import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } fro
     PrivateComponent,
     PublicComponent,
     NavigationComponent,
-    GridComponent,
     DashboardComponent,
     LoginComponent,
     LandingComponent,
