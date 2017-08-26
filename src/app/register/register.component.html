@@ -1,33 +1,39 @@
-<form class="example-form" (submit)="register($event)">
+<div class="form-wrapper">
+  <div class="form-container">
+    <form class="register-form" (submit)="register($event)">
 
-  <md-input-container class="example-full-width">
-    <input mdInput disabled value="Registration form">
-  </md-input-container>
+      <div class="form-header">
+        <p class="head-text">Registration form</p>
+      </div>
+        
+      <div class="form-body">
+        <md-input-container class="full-width">
+          <input mdInput placeholder="Login" required>
+        </md-input-container>
 
-  <md-input-container class="example-full-width">
-    <input mdInput placeholder="Login" required>
-  </md-input-container>
+        <table class="full-width" cellspacing="0"><tr>
+          <td><md-input-container class="full-width">
+            <input mdInput placeholder="First name" required>
+          </md-input-container></td>
+          <td><md-input-container class="full-width">
+            <input mdInput placeholder="Last Name" required>
+          </md-input-container></td>
+        </tr></table>
 
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="First name" required>
-    </md-input-container></td>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="Last Name" required>
-    </md-input-container></td>
-  </tr></table>
+        <md-input-container class="full-width">
+          <input mdInput placeholder="Email" required>
+        </md-input-container>
+        <md-input-container class="full-width">
+          <input mdInput placeholder="Password" type="password" required>
+        </md-input-container>
+        <md-input-container class="full-width">
+          <input mdInput placeholder="Confirm password" type="password" required>
+        </md-input-container>
 
-  <md-input-container class="example-full-width">
-    <input mdInput placeholder="Email" required>
-  </md-input-container>
-  <md-input-container class="example-full-width">
-    <input mdInput placeholder="Password" type="password" required>
-  </md-input-container>
-  <md-input-container class="example-full-width">
-    <input mdInput placeholder="Confirm password" type="password" required>
-  </md-input-container>
-
-  <div>
-    <button type="submit" md-raised-button>Continue</button>
+        <div class="text-right">
+          <button type="submit" md-raised-button>Continue</button>
+        </div>
+      </div>
+    </form>
   </div>
-</form>
+</div>

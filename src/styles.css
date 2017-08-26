@@ -1,12 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 .mat-toolbar {
     height: 64px;
     position: fixed;
     z-index: 2;
 }
 
-.mat-toolbar-row{
+.mat-toolbar-row {
     justify-content: space-between;
 }
