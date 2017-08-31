@@ -20,7 +20,7 @@ import { AuthenticationService } from './_services/auth.service';
 import { PublicComponent, PrivateComponent } from './_layouts/index';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
-import { LandingComponent } from './landing/landing.component';
+import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
 
@@ -38,7 +38,7 @@ import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } fro
     GridComponent,
     DashboardComponent,
     LoginComponent,
-    LandingComponent,
+    HomeComponent,
     RegisterComponent,
     ProfileComponent,
     InfoComponent,
