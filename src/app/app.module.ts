@@ -19,7 +19,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { PublicComponent, PrivateComponent } from './_layouts/index';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
-import { LandingComponent } from './landing/landing.component';
+import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
 
@@ -35,7 +35,7 @@ import { AuthenticationService, ProfileService } from './_services/index';
     NavigationComponent,
     DashboardComponent,
     LoginComponent,
-    LandingComponent,
+    HomeComponent,
     RegisterComponent,
     ProfileComponent,
     InfoComponent,
