@@ -1,25 +1,25 @@
 <md-card>
-  <form class="form-container">
+  <form class="form-container" #form='ngForm' (ngSubmit)='save()'>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="First name" name="firstName">
+      <input mdInput placeholder="First name" name="firstName" [(ngModel)]="profile.firstName">
     </md-input-container>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="Last Name" name="lastName">
+      <input mdInput placeholder="Last Name" name="lastName" [(ngModel)]="profile.lastName">
     </md-input-container>
 
     <md-input-container class="full-width">
-      <input mdInput [mdDatepicker]="picker" placeholder="Date of birth" name="birthDate">
+      <input mdInput [mdDatepicker]="picker" placeholder="Date of birth" name="birthDate" [(ngModel)]="profile.birthDate">
       <button mdSuffix [mdDatepickerToggle]="picker"></button>
     </md-input-container>
     <md-datepicker #picker></md-datepicker>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="Address" name="address">
+      <input mdInput placeholder="Address" name="address" [(ngModel)]="profile.address">
     </md-input-container>
 
-    <md-select class="full-width" placeholder="Education" name="education">
+    <md-select class="full-width" placeholder="Education" name="education" [(ngModel)]="profile.education">
       <md-option value="Some High School">
         Some High School
       </md-option>
@@ -40,7 +40,7 @@
       </md-option>
     </md-select>
 
-    <md-select class="full-width" placeholder="Level of Income:" name="lvlOfIncome">
+    <md-select class="full-width" placeholder="Level of Income:" name="lvlOfIncome" [(ngModel)]="profile.income">
       <md-option value="less than 10 000">
         less than 10 000
       </md-option>
@@ -58,7 +58,7 @@
       </md-option>
     </md-select>
 
-    <md-select class="full-width" placeholder="Dominant Hand" name="dominantHand">
+    <md-select class="full-width" placeholder="Dominant Hand" name="dominantHand" [(ngModel)]="profile.hand">
       <md-option value="left">
         left
       </md-option>
@@ -70,7 +70,7 @@
       </md-option>
     </md-select>
 
-    <md-select class="full-width" placeholder="Ethnicity" name="ethnicity">
+    <md-select class="full-width" placeholder="Ethnicity" name="ethnicity" [(ngModel)]="profile.ethnisity">
       <md-option value="White/Non-hispanic">
         White/Non-hispanic
       </md-option>
@@ -91,7 +91,7 @@
       </md-option>
     </md-select>
 
-    <md-select class="full-width" placeholder="Marital status" name="maritalStatus">
+    <md-select class="full-width" placeholder="Marital status" name="maritalStatus" [(ngModel)]="profile.maritalStatus">
       <md-option value="Single">
         Single
       </md-option>
@@ -100,7 +100,7 @@
       </md-option>
     </md-select>
 
-    <md-select class="full-width" placeholder="How many hours a week do you exercise?" name="lvlExercise">
+    <md-select class="full-width" placeholder="How many hours a week do you exercise?" name="lvlExercise" [(ngModel)]="profile.exercise">
       <md-option value="0-1">
         0-1
       </md-option>
@@ -118,7 +118,7 @@
       </md-option>
     </md-select>
 
-    <md-select class="full-width" placeholder="How would you rate your self-esteem:" name="lvlSelfEsteem">
+    <md-select class="full-width" placeholder="How would you rate your self-esteem:" name="lvlSelfEsteem" [(ngModel)]="profile.selfEsteem">
       <md-option value="Low">
         Low
       </md-option>
@@ -136,7 +136,7 @@
       </md-option>
     </md-select>
 
-    <md-select class="full-width" placeholder="How would you rate your overall health:" name="lvlOverallHealth">
+    <md-select class="full-width" placeholder="How would you rate your overall health:" name="lvlOverallHealth" [(ngModel)]="profile.selfHealth">
       <md-option value="Poor">
         Poor
       </md-option>
@@ -154,7 +154,7 @@
       </md-option>
     </md-select>
 
-    <md-radio-group class="full-width">
+    <md-radio-group class="full-width" [(ngModel)]="profile.gender">
       Gender:
       <md-radio-button class="radio-button" value="male">
         Male
@@ -164,23 +164,23 @@
       </md-radio-button>
     </md-radio-group>
 
-    <md-checkbox class="full-width">Is English your first language?</md-checkbox>
+    <md-checkbox class="full-width" [(ngModel)]="profile.firstLanguage">Is English your first language?</md-checkbox>
 
     <div class="full-width">
       <md-checkbox>Have you ever had a head injury?</md-checkbox>
       <md-input-container class="input-small">
-        <input mdInput placeholder="Count" value="" name="injuryCount">
+        <input mdInput placeholder="Count" value="" name="injuryCount" [(ngModel)]="profile.injuryCount">
       </md-input-container>
     </div>
 
     <md-checkbox class="full-width">Are you currently taking any medications?</md-checkbox>
 
     <md-input-container class="double-width">
-      <input mdInput placeholder="Comment" value="" name="commentMedication">
+      <input mdInput placeholder="Comment" value="" name="commentMedication" [(ngModel)]="profile.medName">
     </md-input-container>
 
     <md-select class="screen-width" placeholder="How many hours a week do you engage in stimulating activity such as follows: reading, writing, playing cards, intellectual conversations, computer use:"
-      name="lvlRest">
+      name="lvlRest" [(ngModel)]="profile.brainActivity">
       <md-option value="0-5">
         0-5
       </md-option>

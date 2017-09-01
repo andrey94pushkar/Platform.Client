@@ -7,14 +7,12 @@ import 'rxjs/add/operator/map';
 export class BaseService {
   protected apiUrl = 'http://api.platform.com.ua';
   private headers = new Headers({'Content-Type': 'application/json'});
-  protected options = new RequestOptions({ headers: this.headers });
 
-  private token() {
-        // create authorization header with jwt token
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.token) {
-            const headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-            return new RequestOptions({ headers: headers });
+  protected options() {
+        const token = JSON.parse(localStorage.getItem('access_token'));
+        if (token) {
+          this.headers.append('Authorization', 'Bearer ' + token);
         }
+        return new RequestOptions({ headers: this.headers });
     }
 }

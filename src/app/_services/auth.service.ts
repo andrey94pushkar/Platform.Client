@@ -13,7 +13,7 @@ export class AuthenticationService extends BaseService {
   register(username: string, password: string, password2: string) {
     return this.http.post(this.apiUrl + '/api/auth/register', JSON.stringify({
       username: username, password: password, password2: password2
-    }), this.options)
+    }), this.options())
       .map((response: Response) => {
         const message = response.json();
         if (message && message.token) {
@@ -28,7 +28,7 @@ export class AuthenticationService extends BaseService {
   login(username: string, password: string) {
     return this.http.post(this.apiUrl + '/api/auth/token', JSON.stringify({
       UserName: username, Password: password
-    }), this.options)
+    }), this.options())
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         const message = response.json();
