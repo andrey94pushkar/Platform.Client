@@ -13,7 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './_directives/navigation/navigation.component';
 import { AuthGuard } from './_guards/auth.guard';
-import { AuthenticationService } from './_services/auth.service';
+
 
 // pages
 import { PublicComponent, PrivateComponent } from './_layouts/index';
@@ -24,9 +24,8 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
 
 
-
-
 // services
+import { AuthenticationService, ProfileService } from './_services/index';
 
 @NgModule({
   declarations: [
@@ -58,6 +57,7 @@ import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } fro
   providers: [
     AuthGuard,
     AuthenticationService,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })
