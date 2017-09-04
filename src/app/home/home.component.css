@@ -156,12 +156,78 @@ footer .copyright{
 .go-top{
     position: fixed;
     background: #3f51b5;
-    bottom: 30px;
+    bottom: 58px;
     right: 30px;
+    padding: 15px;
+    color: hsla(0,0%,100%,.87);
+}
+
+.menu-button{
+    display: none;
+}
+
+.socials{
+    list-style: none;
+    padding: 0;
+}
+
+.socials li{
+    display: inline-block;
+
+}
+.socials li:hover a{
+    background: #3f51b5;
+    color: hsla(0,0%,100%,.87);
+}
+
+.socials li a{
+    display: inline-block;
+    font-size: 18px;
+    color: #3f51b5;
+    width: 48px;
+    height: 46px;
+    line-height: 2.6;
+    transition: 0.3s ease;
+}
+
+.tel{
+    margin: 40px 0;
+}
+
+.tel a{
+    color: #111;
+    text-decoration: none;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 1200px){
     .wrapper{
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .home-menu{
+        display: none;
+        float: unset;
+        width: 100%;
+        margin: 0;
+    }
+
+    .home-menu li{
+        display: block;
+        text-align: center;
+    }
+
+    .home-logo{
+        margin: 20px 20px;
+    }
+
+    .menu-button{
+        display: block;
+        color: hsla(0,0%,100%,.87);
+        float: right;
+        margin: 17px 40px;
+        font-size: 20px;
     }
 }
