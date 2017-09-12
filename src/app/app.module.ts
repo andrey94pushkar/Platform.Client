@@ -7,6 +7,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule, MdNativeDateModule, MdRadioModule } from '@angular/material';
+import { PageSliderModule } from 'ng2-page-slider';
 
 // common
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { PublicComponent, PrivateComponent } from './_layouts/index';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { SlideshowComponent } from './home/slideshow/slideshow.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
 
@@ -36,6 +38,7 @@ import { AuthenticationService, ProfileService } from './_services/index';
     DashboardComponent,
     LoginComponent,
     HomeComponent,
+    SlideshowComponent,
     RegisterComponent,
     ProfileComponent,
     InfoComponent,
@@ -52,6 +55,7 @@ import { AuthenticationService, ProfileService } from './_services/index';
     CdkTableModule,
     ClickOutsideModule,
     HttpModule,
+    PageSliderModule,
     FormsModule
   ],
   providers: [

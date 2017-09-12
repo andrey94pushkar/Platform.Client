@@ -28,8 +28,8 @@
     float: left;
 }
 
-.col-25{
-    width: 25%;
+.col-33{
+    width: 33.3333%;
     float: left;
 }
 
@@ -88,31 +88,22 @@ header{
     height: 56px;
 }
 
-.wrapp-hover{
-    margin: 0 auto;
-    background: #333;
-}
-
 .hovered{
-    width: 100%;
-    height: 100%;
     display: block;
     text-decoration: none;
-    background: #3f51b5;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.15s, opacity 0.15s linear;
+    background: #999;
+    width: 95%;
+    margin: 0 auto;
 }
 
-.wrapp-hover:hover .hovered{
-    display: block;
-    visibility: visible;
-    opacity: 1;
+.hovered:hover{
+    background: #3f51b5;
 }
 
 .desc{
     width: 450px;
     height: 300px;
+    margin: 0 auto;
 }
 
 .desc .head-hext-sm{
@@ -129,6 +120,7 @@ header{
     width: 20%;
     height: 150px;
     float: left;
+    margin-top: 5px;
 }
 
 .test .head-hext-sm{
@@ -137,7 +129,7 @@ header{
     text-transform: uppercase;
     font-size: 17px;
     color: #fff;
-    line-height: 9;
+    line-height: 8.5;
 }
 
 footer{
@@ -166,6 +158,7 @@ footer .copyright{
 .socials{
     list-style: none;
     padding: 0;
+    margin-top: 130px;
 }
 
 .socials li{
@@ -208,11 +201,6 @@ footer .copyright{
     color: #3f51b5;
 }
 
-.contact-form-wrap{
-    width: 450px;
-    margin: 0 auto;
-}
-
 @media screen and (max-width: 1200px){
     .wrapper{
         width: 100%;
@@ -220,6 +208,10 @@ footer .copyright{
 }
 
 @media screen and (max-width: 600px){
+    .test{
+        width: 100%;
+    }
+
     .wrapper{
         padding: 15px;
         width: unset;
@@ -230,7 +222,7 @@ footer .copyright{
         padding: 0 15px;
     }
 
-    .col-25{
+    .col-33{
         width: 100%;
     }
 
@@ -264,5 +256,18 @@ footer .copyright{
         float: right;
         margin: 17px 40px;
         font-size: 20px;
+    }
+
+    .socials{
+        margin-top: 50px;
+    }
+
+    .go-top{
+        bottom: 91px;
+        right: 0;
+    }
+
+    .text-right{
+        text-align: center;
     }
 }
