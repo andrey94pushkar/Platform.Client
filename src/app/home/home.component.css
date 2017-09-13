@@ -54,7 +54,7 @@ header{
     top: 0;
     width: 100%;
     position: fixed;
-    z-index: 2;
+    z-index: 999;
     background: #3f51b5;
 }
 
@@ -149,6 +149,7 @@ footer .copyright{
     right: 30px;
     padding: 15px;
     color: hsla(0,0%,100%,.87);
+    z-index: 999;
 }
 
 .menu-button{
@@ -201,9 +202,14 @@ footer .copyright{
     color: #3f51b5;
 }
 
-@media screen and (max-width: 1200px){
+@media (min-width: 601px) and (max-width: 1200px){
     .wrapper{
-        width: 100%;
+        width: auto;
+        margin: 0 15px;
+    }
+
+    .test{
+        width: 33.333%;
     }
 }
 
@@ -247,14 +253,14 @@ footer .copyright{
     }
 
     .home-logo{
-        margin: 20px 20px;
+        margin: 15px 0px;
     }
 
     .menu-button{
         display: block;
         color: hsla(0,0%,100%,.87);
         float: right;
-        margin: 17px 40px;
+        margin: 14px 15px;
         font-size: 20px;
     }
 
