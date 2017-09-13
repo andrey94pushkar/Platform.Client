@@ -15,3 +15,7 @@ body {
 .mat-toolbar-row {
     justify-content: space-between;
 }
+
+.mat-sidenav-container .mat-sidenav-content{
+    overflow: hidden;
+}

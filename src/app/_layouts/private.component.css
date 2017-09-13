@@ -20,6 +20,7 @@ md-sidenav {
   height: 100%;
   width: 60px;
   min-width: 60px;
+  z-index: 1;
   float: left;
   border-radius: unset;
   box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42),
@@ -43,5 +44,9 @@ md-sidenav {
 }
 
 .content{
-  padding: 79px 15px 15px 75px;
+  margin-top: 64px;
+  padding: 0 15px 15px 75px;
+  overflow: auto;
+  height: calc(100% - 64px);
+  position: absolute;
 }
