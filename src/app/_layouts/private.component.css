@@ -47,6 +47,6 @@ md-sidenav {
   margin-top: 64px;
   padding: 0 15px 15px 75px;
   overflow: auto;
-  height: calc(100% - 64px);
+  height: calc(100% - 80px);
   position: absolute;
 }
