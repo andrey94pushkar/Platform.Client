@@ -20,8 +20,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { PublicComponent, PrivateComponent } from './_layouts/index';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { SlideshowComponent } from './home/slideshow/slideshow.component';
+import { HomeComponent, SlideshowComponent } from './home/index';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
 

@@ -277,3 +277,21 @@ footer .copyright{
         text-align: center;
     }
 }
+
+@media (min-width: 740px) and (max-width: 880px){
+    .home-menu .mat-button{
+        padding: 0 35px;
+    }
+}
+
+@media (min-width: 881px) and (max-width: 1080px){
+    .home-menu .mat-button{
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1081px) and (max-width: 1200px){
+    .home-menu .mat-button{
+        padding: 0 10px;
+    }
+}

@@ -11,16 +11,9 @@
       <button md-icon-button [mdMenuTriggerFor]="account">
         <md-icon>person</md-icon>
       </button>
-      <md-menu #account="mdMenu">
-        <button md-menu-item [routerLink]="['/profile']">
-          <md-icon>account_circle</md-icon>
-          <span>Profile</span>
-        </button>
-        <button md-menu-item (click)='logout()'>
-          <md-icon>exit_to_app</md-icon>
-          <span>Logout</span>
-        </button>
-      </md-menu>
+      <button md-icon-button (click)='logout()'>
+        <md-icon>exit_to_app</md-icon>
+      </button>
     </div>
   </md-toolbar>
 
