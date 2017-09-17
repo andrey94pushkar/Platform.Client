@@ -1,12 +1,12 @@
-<md-card>
+<md-card *ngIf='profile'>
   <form class="form-container" #form='ngForm' (ngSubmit)='save()'>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="First name" name="firstName" [(ngModel)]="profile.firstName">
+      <input mdInput placeholder="First name" [(ngModel)]="profile.firstName" name="firstName">
     </md-input-container>
 
     <md-input-container class="full-width">
-      <input mdInput placeholder="Last Name" name="lastName" [(ngModel)]="profile.lastName">
+      <input mdInput placeholder="Last Name" [(ngModel)]="profile.lastName" name="lastName">
     </md-input-container>
 
     <md-input-container class="full-width">
@@ -154,7 +154,7 @@
       </md-option>
     </md-select>
 
-    <md-radio-group class="full-width" [(ngModel)]="profile.gender">
+    <md-radio-group class="full-width" [(ngModel)]="profile.gender" name='gender'>
       Gender:
       <md-radio-button class="radio-button" value="male">
         Male
@@ -164,7 +164,7 @@
       </md-radio-button>
     </md-radio-group>
 
-    <md-checkbox class="full-width" [(ngModel)]="profile.firstLanguage">Is English your first language?</md-checkbox>
+    <!--<md-checkbox class="full-width" [(ngModel)]="profile.firstLanguage">Is English your first language?</md-checkbox>
 
     <div class="full-width">
       <md-checkbox>Have you ever had a head injury?</md-checkbox>
@@ -196,7 +196,7 @@
       <md-option value="more than 20">
         more than 20
       </md-option>
-    </md-select>
+    </md-select> -->
 
     <div class="full-with text-right">
       <button md-raised-button type="submit" name="save">Save</button>

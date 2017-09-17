@@ -11,7 +11,8 @@ import { Profile } from '../../_models/index';
 })
 
 export class InfoComponent implements OnInit {
-  public profile: Profile;
+  profile: Profile;
+  submited = false;
 
   public constructor(
     private router: Router,
@@ -25,6 +26,8 @@ export class InfoComponent implements OnInit {
   }
 
   save(): void {
-    console.log('saved!');
+    this.profileService.update(this.profile).subscribe(profile => {
+      this.profile = profile;
+    });
   }
 }
