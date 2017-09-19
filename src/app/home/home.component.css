@@ -2,6 +2,17 @@
     font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
+.material-icons{
+    font-family: 'Material Icons'!important;
+}
+
+.mat-icon-cust{
+    width: auto;
+    height: auto;
+    font-size: 5em;
+    color: #3f51b5;
+}
+
 .wrapper{
     width: 1170px;
     margin: 0 auto;
