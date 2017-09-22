@@ -164,23 +164,23 @@
       </md-radio-button>
     </md-radio-group>
 
-    <!--<md-checkbox class="full-width" [(ngModel)]="profile.firstLanguage">Is English your first language?</md-checkbox>
+    <md-checkbox class="full-width" [(ngModel)]="profile.firstLanguage" name='firstLanguage'>Is English your first language?</md-checkbox>
 
     <div class="full-width">
       <md-checkbox>Have you ever had a head injury?</md-checkbox>
       <md-input-container class="input-small">
-        <input mdInput placeholder="Count" value="" name="injuryCount" [(ngModel)]="profile.injuryCount">
+        <input mdInput placeholder="Count" [(ngModel)]="profile.injuryCount" name="injuryCount">
       </md-input-container>
     </div>
 
     <md-checkbox class="full-width">Are you currently taking any medications?</md-checkbox>
 
     <md-input-container class="double-width">
-      <input mdInput placeholder="Comment" value="" name="commentMedication" [(ngModel)]="profile.medName">
+      <input mdInput placeholder="Medications" [(ngModel)]="profile.medName" name="commentMedication">
     </md-input-container>
 
     <md-select class="screen-width" placeholder="How many hours a week do you engage in stimulating activity such as follows: reading, writing, playing cards, intellectual conversations, computer use:"
-      name="lvlRest" [(ngModel)]="profile.brainActivity">
+      [(ngModel)]="profile.brainActivity" name="lvlRest">
       <md-option value="0-5">
         0-5
       </md-option>
@@ -196,7 +196,7 @@
       <md-option value="more than 20">
         more than 20
       </md-option>
-    </md-select> -->
+    </md-select>
 
     <div class="full-with text-right">
       <button md-raised-button type="submit" name="save">Save</button>
