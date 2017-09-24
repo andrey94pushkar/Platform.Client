@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './_directives/navigation/navigation.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { DeleteDialogComponent } from './_directives/dialogs/index';
 
 
 // pages
@@ -42,7 +43,11 @@ import { AuthenticationService, ProfileService } from './_services/index';
     ProfileComponent,
     InfoComponent,
     TestsComponent,
-    ResultsComponent
+    ResultsComponent,
+    DeleteDialogComponent
+  ],
+  entryComponents: [
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,

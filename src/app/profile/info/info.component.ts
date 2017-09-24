@@ -30,12 +30,12 @@ export class InfoComponent implements OnInit {
   save(): void {
     this.profileService.update(this.profile).subscribe(profile => {
       this.profile = profile;
-      this.snackbar.open('Saved!',null,{
-        duration:1000
+      this.snackbar.open('Saved!', null, {
+        duration: 1000
       });
-    },error=>{
-      this.snackbar.open('Error!',null,{
-        duration:1000
+    }, error => {
+      this.snackbar.open('Error!', null, {
+        duration: 1000
       });
       console.log(error);
     });

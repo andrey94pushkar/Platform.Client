@@ -1,5 +1,6 @@
+import { DeleteDialogComponent } from './../../_directives/dialogs/index';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { MdPaginator, MdSort } from '@angular/material';
+import { MdPaginator, MdSort, MdDialog, MdDialogRef } from '@angular/material';
 
 // data
 import { DataSource } from '@angular/cdk';
@@ -13,7 +14,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/observable/fromEvent';
 
 // fake data
-import {ExampleDatabase, ExampleDataSource} from '../tests/tests.component';
+import { ExampleDatabase, ExampleDataSource } from '../tests/tests.component';
 
 
 @Component({
@@ -32,6 +33,7 @@ export class ResultsComponent implements OnInit {
   @ViewChild('filter') filter: ElementRef;
 
   public constructor(
+    private dialog: MdDialog
   ) { }
 
   ngOnInit() {
@@ -50,6 +52,9 @@ export class ResultsComponent implements OnInit {
     console.log(row);
   }
   delete(row) {
+    this.dialog.open(DeleteDialogComponent, {
+      data: row
+    });
     console.log(row);
   }
 }

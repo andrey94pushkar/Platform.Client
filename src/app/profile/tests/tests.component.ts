@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { MdPaginator, MdSort } from '@angular/material';
+import { MdPaginator, MdSort, MdDialog } from '@angular/material';
+import { DeleteDialogComponent } from '../../_directives/dialogs/index';
 
 // data
 import { DataSource } from '@angular/cdk';
@@ -11,6 +12,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/observable/fromEvent';
+
 
 
 @Component({
@@ -29,6 +31,7 @@ export class TestsComponent implements OnInit {
   @ViewChild('filter') filter: ElementRef;
 
   public constructor(
+    private dialog: MdDialog
   ) { }
 
   ngOnInit() {
@@ -47,6 +50,9 @@ export class TestsComponent implements OnInit {
     console.log (row);
   }
   delete(row) {
+    this.dialog.open(DeleteDialogComponent, {
+      data: row
+    });
     console.log (row);
   }
 }
