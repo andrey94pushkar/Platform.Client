@@ -1,16 +1,16 @@
 <!--Menu-->
-<header id="0">
+<header>
     <div class="wrapper">
         <a href="" class="home-logo"><i class="fa fa-cogs" aria-hidden="true"></i> Quiz</a>
         <a href="" class="menu-button"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
         <ul class="home-menu">
-            <li><a href="" md-button>Home</a></li>
-            <li><a href="" md-button>About</a></li>
-            <li><a href="" md-button>Test Categories</a></li>
-            <li><a href="" md-button>Avaialble Tests</a></li>
-            <li><a href="" md-button>Custom Tests</a></li>
-            <li><a href="" md-button>Desktop Tests</a></li>
-            <li><a href="" md-button>Connect</a></li>
+            <li><a pageScroll (click)="goTo('top')" href="#top" md-button>Home</a></li>
+            <li><a pageScroll (click)="goTo('about')" href="#about" md-button>About</a></li>
+            <li><a pageScroll (click)="goTo('test-cat')" href="#test-cat" md-button>Test Categories</a></li>
+            <li><a pageScroll (click)="goTo('available')" href="#available" md-button>Avaialble Tests</a></li>
+            <li><a pageScroll (click)="goTo('custom')" href="#custom" md-button>Custom Tests</a></li>
+            <li><a pageScroll (click)="goTo('desktop')" href="#desktop" md-button>Desktop Tests</a></li>
+            <li><a pageScroll (click)="goTo('form')" href="#form" md-button>Connect</a></li>
             <li><a href="" md-button>Login</a></li>
         </ul>
     </div>
@@ -18,10 +18,10 @@
 <div class="menu-fix"></div>
 
 <!--Slider-->
-<slideshow-component></slideshow-component>
+<slideshow-component id="top"></slideshow-component>
 
 <!--About-->
-<div class="wrapper">
+<div id="about" class="wrapper">
     <p class="head-text text-center">CogQuiz Neuropsychological Tests</p>
     <p class="head-text-sm text-center">The CogQuiz General Philosophy</p>
     <p class="text-center">CogQuiz is a company committed to the development of powerful computer-based tools for cognitive and neuropsychological research and evaluation. Our goal is to design computerized neuropsychological and cognitive tests that are affordable for assessment of medical and/or a mental health status. We have strived, and think we are successful, in making an easy to use, affordably priced tests usable by the general public. As a consumer, you will take a test that is the equal of any test in terms of norms and receive feedback at a fraction of the cost of seeing a licensed professional. You may print out a report that you can take to a professional for an evaluation beyond the report we provide. We believe that an informed individual is their own best advocate.</p>
@@ -34,7 +34,7 @@
     <div class="menu-fix"></div>
 </div>
 <!--TEST CATEGORIES-->
-<div class="back-gray test-cat">
+<div id="test-cat" class="back-gray test-cat">
     <div class="wrapper">
         <p class="head-text text-center">TEST CATEGORIES</p>
         <div class="col-33">
@@ -62,7 +62,7 @@
     </div>
 </div>
 <!--ALL AVAILABLE TESTS-->
-<div class="wrapper">
+<div id="available" class="wrapper">
     <p class="head-hext-sm text-center">The software for each CogQuiz test has been designed with an emphasis on efficiency and ease of use. Each test comes with an easy to use example and a screen feature definition. In addition, we offer prompt, courteous customer support via email or Skype. CogQuiz tests will run on Microsoft Windows XP SP3®, Vista®, Windows 7® Windows 8®.</p>
     <p class="head-text text-center">ALL AVAILABLE TESTS</p>
     <md-tab-group>
@@ -205,7 +205,7 @@
     <div class="menu-fix"></div>
 </div>
 <!--Tests to Order-->
-<div class="back-gray">
+<div id="custom" class="back-gray">
     <div class="wrapper">
         <p class="head-text text-center">Tests to Order</p>
         <div class="col-50">
@@ -233,7 +233,7 @@
 </div>
 
 <!--DeskTop Tests-->
-<div class="wrapper">
+<div id="desktop" class="wrapper">
     <p class="head-text text-center">DeskTop Tests</p>
     <div class="wrapp-hover desc">
         <a href="" class="hovered">
@@ -244,7 +244,7 @@
 </div>
 
 <!--FORM-->
-<div class="back-gray">
+<div id="form" class="back-gray">
     <div class="wrapper contact-form-wrap">
         <div class="col-50">
             <p class="head-text">Contact us:</p>
@@ -286,4 +286,4 @@
         <p class="copyright">© Copyright CogQuiz 2016</p>
     </div>
 </footer>
-<a href="#0" role="button" class="go-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+<a pageScroll (click)="goTo('top')" href="#top" class="go-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>

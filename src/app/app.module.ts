@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule, MdNativeDateModule, MdRadioModule } from '@angular/material';
 import { PageSliderModule } from 'ng2-page-slider';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 // common
 import { AppRoutingModule } from './app-routing.module';
@@ -60,6 +61,7 @@ import { AuthenticationService, ProfileService } from './_services/index';
     ClickOutsideModule,
     HttpModule,
     PageSliderModule,
+    Ng2PageScrollModule,
     FormsModule
   ],
   providers: [
