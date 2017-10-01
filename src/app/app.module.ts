@@ -24,7 +24,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent, SlideshowComponent } from './home/index';
 import { RegisterComponent } from './register/register.component';
-import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
+import { ProfileComponent, InfoComponent, TestsComponent } from './profile/index';
 
 
 // services
@@ -44,7 +44,6 @@ import { AuthenticationService, ProfileService } from './_services/index';
     ProfileComponent,
     InfoComponent,
     TestsComponent,
-    ResultsComponent,
     DeleteDialogComponent
   ],
   entryComponents: [

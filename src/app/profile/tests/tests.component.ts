@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MdPaginator, MdSort, MdDialog } from '@angular/material';
 import { DeleteDialogComponent } from '../../_directives/dialogs/index';
+import { Test, TestType, UserTest } from '../../_models/index';
 
 // data
 import { DataSource } from '@angular/cdk';
@@ -47,13 +48,13 @@ export class TestsComponent implements OnInit {
   }
 
   edit(row) {
-    console.log (row);
+    console.log(row);
   }
   delete(row) {
     this.dialog.open(DeleteDialogComponent, {
       data: row
     });
-    console.log (row);
+    console.log(row);
   }
 }
 
