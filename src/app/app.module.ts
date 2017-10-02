@@ -28,7 +28,9 @@ import { ProfileComponent, InfoComponent, TestsComponent } from './profile/index
 
 
 // services
-import { AuthenticationService, ProfileService } from './_services/index';
+import { AuthenticationService, ProfileService, TestService } from './_services/index';
+import { TestTypeService } from './_services/testtype.service';
+import { UserTestService } from './_services/user-test.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,10 @@ import { AuthenticationService, ProfileService } from './_services/index';
   providers: [
     AuthGuard,
     AuthenticationService,
-    ProfileService
+    ProfileService,
+    TestService,
+    TestTypeService,
+    UserTestService
   ],
   bootstrap: [AppComponent]
 })

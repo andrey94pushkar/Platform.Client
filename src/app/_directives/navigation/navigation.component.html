@@ -1,18 +1,23 @@
 <div class="nav-container">
   <nav>
     <ul>
-      <li>
-        <a class="element" routerLinkActive="active-link" [routerLink]="['/dashboard']">
+      <li [routerLinkActive]="['active-link']">
+        <a class="element" [routerLink]="['/home']">
+          <md-icon>home</md-icon> Home
+        </a>
+      </li>
+      <li [routerLinkActive]="['active-link']">
+        <a class="element" [routerLink]="['/dashboard']">
           <md-icon>dashboard</md-icon> Dashboard
         </a>
       </li>
-      <li>
-        <a class="element" routerLinkActive="active-link" [routerLink]="['/profile']">
+      <li [routerLinkActive]="['active-link']">
+        <a class="element" [routerLink]="['/profile']">
           <md-icon>person</md-icon> Profile
         </a>
       </li>
       <li>
-        <a class="element" href='' routerLinkActive="active-link" (click)="logout()">
+        <a class="element" href='' (click)="logout()">
           <md-icon>input</md-icon> Logout
         </a>
       </li>

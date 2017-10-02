@@ -5,5 +5,5 @@ export class Test {
   public providerId: string;
   public paidCount: number;
 
-  public TestType: TestType;
+  public testType: TestType;
 }

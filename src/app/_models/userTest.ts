@@ -5,5 +5,5 @@ export class UserTest {
   public userId: string;
   public testId: number;
 
-  public Test: Test;
+  public test: Test;
 }
