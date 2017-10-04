@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MdSnackBar } from '@angular/material';
 import { ProfileService } from '../../_services/index';
 import { Profile } from '../../_models/index';
 
@@ -16,7 +17,8 @@ export class InfoComponent implements OnInit {
 
   public constructor(
     private router: Router,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    private snackbar: MdSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +30,14 @@ export class InfoComponent implements OnInit {
   save(): void {
     this.profileService.update(this.profile).subscribe(profile => {
       this.profile = profile;
+      this.snackbar.open('Saved!', null, {
+        duration: 1000
+      });
+    }, error => {
+      this.snackbar.open('Error!', null, {
+        duration: 1000
+      });
+      console.log(error);
     });
   }
 }

@@ -51,3 +51,50 @@ md-sidenav {
   position: absolute;
   width: calc(100% - 91px);
 }
+
+.show-xs{
+  display: none;
+}
+
+@media screen and (max-width:600px) {
+  .content{
+    padding: 0;
+    width: 100%;
+  }
+
+  .menu-button{
+    z-index: 3;
+    height: 36px;
+    margin: 3px 10px;
+    min-width: 30px;
+    width: 30px;
+    padding-left: 0;
+    background: unset;
+    box-shadow: unset;
+  }
+
+  .mat-toolbar{
+    height: 56px;
+    min-height: 56px;
+  }
+
+  md-sidenav{
+    width: 70%;
+  }
+  
+  .menu-button md-icon{
+    line-height: unset;
+    color: rgba(255,255,255,.87);
+  }
+
+  .logo{
+    margin-left: 50px;
+  }
+
+  .hide-xs{
+    display: none;
+  }
+  .show-xs{
+    display: inline-block;
+  }
+}

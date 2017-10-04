@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './_directives/navigation/navigation.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { DeleteDialogComponent } from './_directives/dialogs/index';
 
 
 // pages
@@ -23,11 +24,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent, SlideshowComponent } from './home/index';
 import { RegisterComponent } from './register/register.component';
-import { ProfileComponent, InfoComponent, ResultsComponent, TestsComponent } from './profile/index';
+import { ProfileComponent, InfoComponent, TestsComponent } from './profile/index';
 
 
 // services
-import { AuthenticationService, ProfileService } from './_services/index';
+import { AuthenticationService, ProfileService, TestService } from './_services/index';
+import { TestTypeService } from './_services/testtype.service';
+import { UserTestService } from './_services/user-test.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { AuthenticationService, ProfileService } from './_services/index';
     ProfileComponent,
     InfoComponent,
     TestsComponent,
-    ResultsComponent
+    DeleteDialogComponent
+  ],
+  entryComponents: [
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,10 @@ import { AuthenticationService, ProfileService } from './_services/index';
   providers: [
     AuthGuard,
     AuthenticationService,
-    ProfileService
+    ProfileService,
+    TestService,
+    TestTypeService,
+    UserTestService
   ],
   bootstrap: [AppComponent]
 })
