@@ -111,6 +111,10 @@ header{
     background: #3f51b5;
 }
 
+.hovered button{
+    background: #3f51b5;
+}
+
 .desc{
     width: 450px;
     height: 300px;
@@ -123,7 +127,7 @@ header{
     text-transform: uppercase;
     font-size: 32px;
     color: #fff;
-    line-height: 9;
+    line-height: 4.5;
 }
 
 .test{
@@ -140,7 +144,7 @@ header{
     text-transform: uppercase;
     font-size: 17px;
     color: #fff;
-    line-height: 8.5;
+    line-height: 4.25;
 }
 
 footer{

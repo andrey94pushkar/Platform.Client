@@ -54,13 +54,22 @@ margin: 15px 0;
   margin-left: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .form-container {
       width: 100%;
   }
 
   .half-width{
       width: 100%;
+  }
+
+  .double-width{
+    width: 100%;
+  }
+
+  .full-width{
+    width: 100%;
+    display: block;
   }
 
   td {
