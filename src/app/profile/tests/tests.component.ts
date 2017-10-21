@@ -47,13 +47,10 @@ export class TestsComponent implements OnInit {
       });
   }
 
-  edit(row) {
+  startTest(row) {
     console.log(row);
   }
-  delete(row) {
-    this.dialog.open(DeleteDialogComponent, {
-      data: row
-    });
+  showResults(row) {
     console.log(row);
   }
 }
