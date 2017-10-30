@@ -1,3 +1,4 @@
+import { TowerOfLondonComponent } from './tower-of-london/tower-of-london.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -17,7 +18,8 @@ const PUBLIC_ROUTES: Routes = [
 
 const PRIVATE_ROUTES: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'towerOfLondon', component: TowerOfLondonComponent, canActivate: [AuthGuard]}
 ];
 
 const ROUTES: Routes = [

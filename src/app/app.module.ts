@@ -17,6 +17,10 @@ import { NavigationComponent } from './_directives/navigation/navigation.compone
 import { AuthGuard } from './_guards/auth.guard';
 import { DeleteDialogComponent } from './_directives/dialogs/index';
 
+// services
+import { AuthenticationService, ProfileService, TestService } from './_services/index';
+import { TestTypeService } from './_services/testtype.service';
+import { UserTestService } from './_services/user-test.service';
 
 // pages
 import { PublicComponent, PrivateComponent } from './_layouts/index';
@@ -25,12 +29,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent, SlideshowComponent } from './home/index';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent, InfoComponent, TestsComponent } from './profile/index';
+import { TowerOfLondonComponent } from './tower-of-london/tower-of-london.component';
 
-
-// services
-import { AuthenticationService, ProfileService, TestService } from './_services/index';
-import { TestTypeService } from './_services/testtype.service';
-import { UserTestService } from './_services/user-test.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,8 @@ import { UserTestService } from './_services/user-test.service';
     ProfileComponent,
     InfoComponent,
     TestsComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    TowerOfLondonComponent
   ],
   entryComponents: [
     DeleteDialogComponent
