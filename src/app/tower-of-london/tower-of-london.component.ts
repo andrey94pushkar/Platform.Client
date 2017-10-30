@@ -11,6 +11,29 @@ export class TowerOfLondonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    tol.initGame();
+    const gameSettings = {
+      TestName: 'TestName',
+      Instructions: 'Instructions',
+      InstructionsFinish: 'InstructionsFinish',
+      TxtButton: 'TxtButton',
+      Feedback: 'Feedback',
+      CountDownFrom: 5,
+      TextOverMoves: 'TextOverMoves',
+      TextOverTime: 'TextOverTime',
+      DisplayResults: 'DisplayResults',
+      TxtToSpeech: 'TxtToSpeech',
+      PrctRounds: 0,
+      TestRounds: 4,
+      CalcResFrom: 'CalcResFrom',
+      TimeOut: 30,
+      MaxMoves: 'MaxMoves',
+      ShowFeedback: 'ShowFeedback',
+      WorkTag: 'WorkTag',
+      GoalTag: 'GoalTag',
+      CountDownText: 'CountDownText',
+      Language: 'Language'
+    };
+
+    tol.initGame(gameSettings);
   }
 }

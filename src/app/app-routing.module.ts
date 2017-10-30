@@ -19,7 +19,7 @@ const PUBLIC_ROUTES: Routes = [
 const PRIVATE_ROUTES: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'towerOfLondon', component: TowerOfLondonComponent, canActivate: [AuthGuard]}
+  { path: 'tower-of-london', component: TowerOfLondonComponent, canActivate: [AuthGuard]}
 ];
 
 const ROUTES: Routes = [

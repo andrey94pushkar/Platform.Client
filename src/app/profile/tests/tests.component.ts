@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MdSort, MdDialog } from '@angular/material';
 import { DeleteDialogComponent } from '../../_directives/dialogs/index';
@@ -32,7 +33,8 @@ export class TestsComponent implements OnInit {
 
   public constructor(
     private dialog: MdDialog,
-    private userTestService: UserTestService
+    private userTestService: UserTestService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -49,6 +51,7 @@ export class TestsComponent implements OnInit {
 
   startTest(row) {
     console.log(row);
+    this.router.navigate(['/tower-of-london']);
   }
   showResults(row) {
     console.log(row);

@@ -3,7 +3,7 @@ export var tol = (function () {
     initGame: initGame
   };
 
-  function initGame() {
+  function initGame(gameSettings) {
     var game = 0;
     var canMove = false;
     var nm = 0;
@@ -71,28 +71,7 @@ export var tol = (function () {
       NumberOfMoves: 5
     }
 
-    var gameSettings = {
-      TestName: 'TestName',
-      Instructions: 'Instructions',
-      InstructionsFinish: 'InstructionsFinish',
-      TxtButton: 'TxtButton',
-      Feedback: 'Feedback',
-      CountDownFrom: 5,
-      TextOverMoves: 'TextOverMoves',
-      TextOverTime: 'TextOverTime',
-      DisplayResults: 'DisplayResults',
-      TxtToSpeech: 'TxtToSpeech',
-      PrctRounds: 0,
-      TestRounds: 4,
-      CalcResFrom: 'CalcResFrom',
-      TimeOut: 30,
-      MaxMoves: 'MaxMoves',
-      ShowFeedback: 'ShowFeedback',
-      WorkTag: 'WorkTag',
-      GoalTag: 'GoalTag',
-      CountDownText: 'CountDownText',
-      Language: 'Language'
-    }
+    var gameSettings = gameSettings;
 
     //globals:
     var p1 = null;
@@ -1581,9 +1560,9 @@ export var tol = (function () {
       var text = gameSettings.Instructions;
 
 
-      sentences = text.split(".")
-      for (i = 0; i < sentences.length; i++) {
-        sentence = sentences[i];
+      var sentences = text.split(".")
+      for (var i = 0; i < sentences.length; i++) {
+        var sentence = sentences[i];
 
         var synth = speechSynthesis;
         var language = gameSettings.Language;
