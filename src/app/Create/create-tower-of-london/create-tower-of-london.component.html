@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--
+ <label>SET UP TEST INSTRUCTIONS:</label>
+<md-card>
+    <form class="form-container" style="display: grid" #form='ngForm' (ngSubmit)='save()'>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Test name" name="testName">
+            </md-input-container>
+            <label>Enter Test Instructions to display:</label>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="In the beginning of the test:" name="feedbackText">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Enter Feedback Text:" name="feedbackText">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Enter Over Move Limit feedback: " name="overMoveFeedback">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Enter Over Time Limit feedback text:" name="overTimeFeedback">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Enter Test Instructions to display at the end of the test:" name="onEnd">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Enter Button Text that will show at the end of the test:" name="finishButtonText">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Enter Work Area label:" name="finishButtonText">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <input mdInput placeholder="Enter Goal State area label:" name="finishButtonText">
+            </md-input-container>
+        
+            <label>SET UP TEST PARAMETERS:</label>
+            <md-select class="full-width" placeholder="Number of Practice Rounds:" name="practiceRounds" >
+                <md-option value="0">
+                        0
+                </md-option>
+                <md-option value="1">
+                        1
+                </md-option>
+                <md-option value="2">
+                        2
+                </md-option>
+                <md-option value="3">
+                        3
+                </md-option>
+                <md-option value="4">
+                        4
+                </md-option>
+                <md-option value="5">
+                        5
+                </md-option>
+                <md-option value="6">
+                        6
+                </md-option>
+                <md-option value="7">
+                        7
+                </md-option>
+                <md-option value="8">
+                        8
+                </md-option>
+                <md-option value="9">
+                        9
+                </md-option>
+             </md-select>
+             <md-input-container class="full-width">
+                <input mdInput type="number" placeholder="Number of Test Rounds:"  name="numOfTestRounds">
+             </md-input-container>
+             <md-input-container class="full-width">
+                <input mdInput type="number" placeholder="Calculate Results From:"  name="CalculateFrom">
+             </md-input-container>
+             <md-input-container class="full-width">
+                <input mdInput type="number" placeholder="Time Out After (sec):"  name="TimeOutAfter">
+             </md-input-container>
+             <md-input-container class="full-width">
+                <input mdInput type="number" placeholder="Max Moves Allowed"  name="MaxMoves">
+             </md-input-container>
+             <md-input-container class="full-width">
+                <input mdInput type="number" placeholder="Countdown time (sec)"  name="Countdowntime">
+             </md-input-container>
+             <md-input-container class="full-width">
+                <input mdInput placeholder="Countdown Text:"  name="CountdownText">
+             </md-input-container>
+             <md-checkbox>Show Feedback</md-checkbox>
+             <md-checkbox>Display Result Page</md-checkbox>
+             <div class="full-width">
+                <md-checkbox>Use Text-To-Speech</md-checkbox>
+                        <md-select class="full-width" name="TextToSpeech" >
+                                <md-option value="0">
+                                        0
+                                </md-option>
+                                <md-option value="1">
+                                        1
+                                </md-option>
+                                <md-option value="2">
+                                        2
+                                </md-option>
+                                <md-option value="3">
+                                        3
+                                </md-option>
+                                                
+                        </md-select>
+                
+             </div>
+             <label>SET UP ROUND POSITIONS:</label>
+
+
+            
+    </form>
+</md-card> -->
+
+<div class="box">
+    <div class="col-lg-12">
+        <hr>
+        <h2 class="intro-text text-center">Set Up
+                <strong>Round Positions:</strong>
+        </h2>
+        <hr>
+    </div>
+    <div class="alert alert-danger" id="MovesError" style="display: none;"></div>
+
+    <div class="alert alert-success" id="success" style="display: none;">
+    </div>
+    <input id="SetupUpdate" class="btn  btn-success btn-xs" type="button" value="Set Moves">
+
+
+    <div class="col-lg-12">
+        
+        <div class="input-group input-group-lg " id="title">
+            <span class="input-group-addon" id="roundNumber" style="display: none;"></span>
+            <input type="text" class="form-control" id="roundValue" style="width: 50px; display: none;">
+        </div>
+
+    </div>
+    
+    <div class="col-md-4 col-sm-12 workArea  font-larger" id="start">
+        Start Position
+    </div>
+    <div class="col-md-1">
+        <input id="colorBlue" class="col-lg-1 btn btn-labeled btn-primary" type="button">
+        <input id="colorGreen" class=" col-lg-1 btn btn-labeled btn-success" type="button">
+        <input id="colorRed" class=" col-lg-1 btn btn-labeled btn-danger" type="button">
+
+    </div>
+
+    <div class="col-md-4  workArea  font-larger" id="end">
+        Goal Position
+    </div>
+
+    <div class="col-md-2 col-sm-offset-1">
+        <p>Number of Moves:</p>
+        <input type="text" id="numberOfMoves" style="width: 50px">
+
+
+    </div>
+    <div class="col-lg-6">
+
+        <input id="save" class="btn  btn-success btn-xs" type="button" value="Save" style="display: none;">
+        <input id="delete" class="btn  btn-success btn-xs" type="button" value="Delete" style="display: none;">
+        <input id="makeAnother" class="btn btn-success btn-xs" type="button" value="Create" style="display: none;">
+
+    </div>
+    <div class="col-lg-4 col-sm-offset-2">
+        <input class=" btn btn-info btn-xs" id="viewTest" type="button" value="View Test" style="display: none;">
+        <input class=" btn btn-danger btn-xs" id="saveTest" type="button" value="Save Test">
+
+    </div>
+    <div class="col-lg-12" id="pageNums">
+    </div>
+</div>
