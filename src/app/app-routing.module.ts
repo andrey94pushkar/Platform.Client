@@ -1,5 +1,5 @@
 import { TowerOfLondonComponent } from './tower-of-london/tower-of-london.component';
-import { CreateTowerOfLondonComponent } from './Create/create-tower-of-london/create-tower-of-london.componetn'
+import { CreateTowerOfLondonComponent } from './create-tower-of-london/create-tower-of-london.componetn'
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

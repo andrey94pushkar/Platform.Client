@@ -30,7 +30,7 @@ import { HomeComponent, SlideshowComponent } from './home/index';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent, InfoComponent, TestsComponent } from './profile/index';
 import { TowerOfLondonComponent } from './tower-of-london/tower-of-london.component';
-import { CreateTowerOfLondonComponent } from './Create/create-tower-of-london/create-tower-of-london.componetn'
+import { CreateTowerOfLondonComponent } from './create-tower-of-london/create-tower-of-london.componetn'
 
 
 @NgModule({
