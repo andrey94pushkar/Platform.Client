@@ -1,172 +1,240 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!--
- <label>SET UP TEST INSTRUCTIONS:</label>
+
 <mat-card>
+
     <form class="form-container" style="display: grid" #form='ngForm' (ngSubmit)='save()'>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Test name" name="testName">
-            </mat-input-container>
-            <label>Enter Test Instructions to display:</label>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="In the beginning of the test:" name="feedbackText">
-            </mat-input-container>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Enter Feedback Text:" name="feedbackText">
-            </mat-input-container>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Enter Over Move Limit feedback: " name="overMoveFeedback">
-            </mat-input-container>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Enter Over Time Limit feedback text:" name="overTimeFeedback">
-            </mat-input-container>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Enter Test Instructions to display at the end of the test:" name="onEnd">
-            </mat-input-container>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Enter Button Text that will show at the end of the test:" name="finishButtonText">
-            </mat-input-container>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Enter Work Area label:" name="finishButtonText">
-            </mat-input-container>
-            <mat-input-container class="full-width">
-                <input matInput placeholder="Enter Goal State area label:" name="finishButtonText">
-            </mat-input-container>
-        
-            <label>SET UP TEST PARAMETERS:</label>
-            <mat-select class="full-width" placeholder="Number of Practice Rounds:" name="practiceRounds" >
-                <mat-option value="0">
-                        0
-                </mat-option>
-                <mat-option value="1">
-                        1
-                </mat-option>
-                <mat-option value="2">
-                        2
-                </mat-option>
-                <mat-option value="3">
-                        3
-                </mat-option>
-                <mat-option value="4">
-                        4
-                </mat-option>
-                <mat-option value="5">
-                        5
-                </mat-option>
-                <mat-option value="6">
-                        6
-                </mat-option>
-                <mat-option value="7">
-                        7
-                </mat-option>
-                <mat-option value="8">
-                        8
-                </mat-option>
-                <mat-option value="9">
-                        9
-                </mat-option>
-             </mat-select>
-             <mat-input-container class="full-width">
-                <input matInput type="number" placeholder="Number of Test Rounds:"  name="numOfTestRounds">
-             </mat-input-container>
-             <mat-input-container class="full-width">
-                <input matInput type="number" placeholder="Calculate Results From:"  name="CalculateFrom">
-             </mat-input-container>
-             <mat-input-container class="full-width">
-                <input matInput type="number" placeholder="Time Out After (sec):"  name="TimeOutAfter">
-             </mat-input-container>
-             <mat-input-container class="full-width">
-                <input matInput type="number" placeholder="Max Moves Allowed"  name="MaxMoves">
-             </mat-input-container>
-             <mat-input-container class="full-width">
-                <input matInput type="number" placeholder="Countdown time (sec)"  name="Countdowntime">
-             </mat-input-container>
-             <mat-input-container class="full-width">
-                <input matInput placeholder="Countdown Text:"  name="CountdownText">
-             </mat-input-container>
-             <mat-checkbox>Show Feedback</mat-checkbox>
-             <mat-checkbox>Display Result Page</mat-checkbox>
-             <div class="full-width">
-                <mat-checkbox>Use Text-To-Speech</mat-checkbox>
-                        <mat-select class="full-width" name="TextToSpeech" >
-                                <mat-option value="0">
-                                        0
-                                </mat-option>
-                                <mat-option value="1">
-                                        1
-                                </mat-option>
-                                <mat-option value="2">
-                                        2
-                                </mat-option>
-                                <mat-option value="3">
-                                        3
-                                </mat-option>
-                                                
+
+        <mat-horizontal-stepper [linear] = "false">
+
+            <mat-step [stepControl]="firstFormGroup">
+
+                <div [formGroup]="firstFormGroup">
+
+                    <ng-template matStepLabel>Name</ng-template>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Test name" name="testName">
+                    </mat-form-field>
+
+                    <div class="text-right">
+                        <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    </div>
+
+                </div>
+
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+
+                <div [formGroup]="secondFormGroup">
+
+                    <ng-template matStepLabel>Enter test instructions</ng-template>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="In the beginning of the test:" name="feedbackText">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Enter Feedback Text:" name="feedbackText">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Enter Over Move Limit feedback: " name="overMoveFeedback">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Enter Over Time Limit feedback text:" name="overTimeFeedback">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Enter Test Instructions to display at the end of the test:" name="onEnd">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Enter Button Text that will show at the end of the test:" name="finishButtonText">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Enter Work Area label:" name="finishButtonText">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Enter Goal State area label:" name="finishButtonText">
+                    </mat-form-field>
+
+                    <div class="space-between">
+                        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                        <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    </div>
+
+                </div>
+
+            </mat-step>
+
+            <mat-step [stepControl]="thirdFormGroup">
+
+                <div [formGroup]="thirdFormGroup">
+
+                    <ng-template matStepLabel>Set up test parameters</ng-template>
+                    
+                    <mat-form-field class="screen-width">
+
+                        <mat-select placeholder="Number of Practice Rounds:" name="practiceRounds" >
+
+                            <mat-option value="0">
+                                    0
+                            </mat-option>
+                            <mat-option value="1">
+                                    1
+                            </mat-option>
+                            <mat-option value="2">
+                                    2
+                            </mat-option>
+                            <mat-option value="3">
+                                    3
+                            </mat-option>
+                            <mat-option value="4">
+                                    4
+                            </mat-option>
+                            <mat-option value="5">
+                                    5
+                            </mat-option>
+                            <mat-option value="6">
+                                    6
+                            </mat-option>
+                            <mat-option value="7">
+                                    7
+                            </mat-option>
+                            <mat-option value="8">
+                                    8
+                            </mat-option>
+                            <mat-option value="9">
+                                    9
+                            </mat-option>
+
                         </mat-select>
+
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput type="number" placeholder="Number of Test Rounds:"  name="numOfTestRounds">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput type="number" placeholder="Calculate Results From:"  name="CalculateFrom">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput type="number" placeholder="Time Out After (sec):"  name="TimeOutAfter">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput type="number" placeholder="Max Moves Allowed"  name="MaxMoves">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput type="number" placeholder="Countdown time (sec)"  name="Countdowntime">
+                    </mat-form-field>
+
+                    <mat-form-field class="screen-width">
+                        <input matInput placeholder="Countdown Text:"  name="CountdownText">
+                    </mat-form-field>
+
+                    <mat-checkbox>Show Feedback</mat-checkbox>
+                    <br>
+                    <mat-checkbox>Display Result Page</mat-checkbox>
+
+                    <div class="screen-width">
+
+                        <mat-checkbox>Use Text-To-Speech</mat-checkbox>
+
+                        <mat-form-field class="screen-width">
+
+                            <mat-select name="TextToSpeech" placeholder="Speech">
+
+                                    <mat-option value="0">
+                                            0
+                                    </mat-option>
+                                    <mat-option value="1">
+                                            1
+                                    </mat-option>
+                                    <mat-option value="2">
+                                            2
+                                    </mat-option>
+                                    <mat-option value="3">
+                                            3
+                                    </mat-option>
+                                                    
+                            </mat-select>
+
+                        </mat-form-field>
+                        
+                    </div>
+
+                    <div class="space-between">
+                        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                        <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    </div>
+                </div>
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Set Up Round Positions</ng-template>
+                <div class="box">
+
+                    <div class="alert alert-danger" id="MovesError" style="display: none;"></div>
+                    <div class="alert alert-success" id="success" style="display: none;"></div>
+
+                    <button mat-raised-button color="warn" id="SetupUpdate" type="button">Set Moves</button>
                 
-             </div>
-             <label>SET UP ROUND POSITIONS:</label>
+                    <div class="col-lg-12">
+                        
+                        <div class="input-group input-group-lg " id="title">
+                            <span class="input-group-addon" id="roundNumber" style="display: none;"></span>
+                            <input type="text" class="form-control" id="roundValue" style="width: 50px; display: none;">
+                        </div>
+                
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-12 workArea  font-larger" id="start">
+                        Start Position
+                    </div>
+                    <div class="col-md-1">
+                        <input id="colorBlue" class="col-lg-1 btn btn-labeled btn-primary" type="button">
+                        <input id="colorGreen" class=" col-lg-1 btn btn-labeled btn-success" type="button">
+                        <input id="colorRed" class=" col-lg-1 btn btn-labeled btn-danger" type="button">
+                
+                    </div>
+                
+                    <div class="col-md-4  workArea  font-larger" id="end">
+                        Goal Position
+                    </div>
+                
+                    <div class="col-md-2 col-sm-offset-1">
+                        <p>Number of Moves:</p>
+                        <input type="text" id="numberOfMoves" style="width: 50px">
+                
+                
+                    </div>
+                    <div class="col-lg-6">
+                
+                        <input id="save" class="btn  btn-success btn-xs" type="button" value="Save" style="display: none;">
+                        <input id="delete" class="btn  btn-success btn-xs" type="button" value="Delete" style="display: none;">
+                        <input id="makeAnother" class="btn btn-success btn-xs" type="button" value="Create" style="display: none;">
+                
+                    </div>
+                    <div class="col-lg-12" id="pageNums">
+                    </div>
+                </div>
+                <div class="space-between">
+                    <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                    <button mat-raised-button color="warn" id="viewTest" type="button" style="display: none;">View Test</button>
+                    <button mat-raised-button color="warn" id="saveTest" type="button">Save Test</button>
+                </div>
+            </mat-step>
 
+        </mat-horizontal-stepper>
 
-            
     </form>
-</mat-card> -->
 
-<div class="box">
-    <div class="col-lg-12">
-        <hr>
-        <h2 class="intro-text text-center">Set Up
-                <strong>Round Positions:</strong>
-        </h2>
-        <hr>
-    </div>
-    <div class="alert alert-danger" id="MovesError" style="display: none;"></div>
-
-    <div class="alert alert-success" id="success" style="display: none;">
-    </div>
-    <input id="SetupUpdate" class="btn  btn-success btn-xs" type="button" value="Set Moves">
-
-
-    <div class="col-lg-12">
-        
-        <div class="input-group input-group-lg " id="title">
-            <span class="input-group-addon" id="roundNumber" style="display: none;"></span>
-            <input type="text" class="form-control" id="roundValue" style="width: 50px; display: none;">
-        </div>
-
-    </div>
-    
-    <div class="col-md-4 col-sm-12 workArea  font-larger" id="start">
-        Start Position
-    </div>
-    <div class="col-md-1">
-        <input id="colorBlue" class="col-lg-1 btn btn-labeled btn-primary" type="button">
-        <input id="colorGreen" class=" col-lg-1 btn btn-labeled btn-success" type="button">
-        <input id="colorRed" class=" col-lg-1 btn btn-labeled btn-danger" type="button">
-
-    </div>
-
-    <div class="col-md-4  workArea  font-larger" id="end">
-        Goal Position
-    </div>
-
-    <div class="col-md-2 col-sm-offset-1">
-        <p>Number of Moves:</p>
-        <input type="text" id="numberOfMoves" style="width: 50px">
-
-
-    </div>
-    <div class="col-lg-6">
-
-        <input id="save" class="btn  btn-success btn-xs" type="button" value="Save" style="display: none;">
-        <input id="delete" class="btn  btn-success btn-xs" type="button" value="Delete" style="display: none;">
-        <input id="makeAnother" class="btn btn-success btn-xs" type="button" value="Create" style="display: none;">
-
-    </div>
-    <div class="col-lg-4 col-sm-offset-2">
-        <input class=" btn btn-info btn-xs" id="viewTest" type="button" value="View Test" style="display: none;">
-        <input class=" btn btn-danger btn-xs" id="saveTest" type="button" value="Save Test">
-
-    </div>
-    <div class="col-lg-12" id="pageNums">
-    </div>
-</div>
+</mat-card>
