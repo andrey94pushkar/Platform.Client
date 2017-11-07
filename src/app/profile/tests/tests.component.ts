@@ -1,13 +1,13 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { MdSort, MdDialog } from '@angular/material';
+import { MatSort, MatDialog } from '@angular/material';
 import { DeleteDialogComponent } from '../../_directives/dialogs/index';
 import { Test, TestType, UserTest } from '../../_models/index';
 import { UserTestDataSource} from './user-tests.datasource';
 import { UserTestService } from '../../_services/index';
 
 // data
-import { DataSource } from '@angular/cdk';
+import { DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
@@ -28,15 +28,15 @@ export class TestsComponent implements OnInit {
   displayedColumns: string[];
   dataSource: UserTestDataSource | null;
 
-  @ViewChild(MdSort) sort: MdSort;
+  @ViewChild(MatSort) sort: MatSort;
   @ViewChild('filter') filter: ElementRef;
 
   public constructor(
-    private dialog: MdDialog,
+    private dialog: MatDialog,
     private userTestService: UserTestService,
     private router: Router
   ) { }
-
+  
   ngOnInit() {
     this.displayedColumns = ['testType', 'providerId', 'actions'];
     this.dataSource = new UserTestDataSource(this.userTestService, this.sort);

@@ -1,32 +1,32 @@
 <div class="container mat-elevation-z8">
   <div class="header">
-    <md-input-container floatPlaceholder="never">
-      <input mdInput #filter placeholder="Filter">
-    </md-input-container>
+    <mat-form-field floatPlaceholder="never">
+      <input matInput #filter placeholder="Filter">
+    </mat-form-field>
   </div>
-  <md-table #table [dataSource]="dataSource" mdSort>
+  <mat-table #table [dataSource]="dataSource" matSort>
     <ng-container cdkColumnDef="testType">
-      <md-header-cell *cdkHeaderCellDef md-sort-header> Test Type </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.test.testType.name}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> Test Type </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.test.testType.name}} </mat-cell>
     </ng-container>
     <ng-container cdkColumnDef="providerId">
-      <md-header-cell *cdkHeaderCellDef md-sort-header> providerId </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.test.providerId}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> providerId </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.test.providerId}} </mat-cell>
     </ng-container>
     <ng-container cdkColumnDef="actions">
-      <md-header-cell *cdkHeaderCellDef md-sort-header> </md-header-cell>
-      <md-cell *cdkCellDef="let row">
-        <button *ngIf='true' md-button (click)='startTest(row)'>
-              <md-icon md-48>play_arrow</md-icon>
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> </mat-header-cell>
+      <mat-cell *cdkCellDef="let row">
+        <button *ngIf='true' mat-button (click)='startTest(row)'>
+              <mat-icon mat-48>play_arrow</mat-icon>
               <span>Start</span>
         </button>
-        <button *ngIf='false' md-button (click)='showResults(row)'>
-          <md-icon>assignment</md-icon>
+        <button *ngIf='false' mat-button (click)='showResults(row)'>
+          <mat-icon>assignment</mat-icon>
           <span>results</span>
         </button>
-      </md-cell>
+      </mat-cell>
     </ng-container>
-    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
-    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
-  </md-table>
+    <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 </div>

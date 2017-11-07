@@ -1,29 +1,33 @@
-<md-sidenav-container fullscreen>
+<mat-sidenav-container fullscreen>
 
-<md-sidenav #sidenav mode="over">
+  <mat-sidenav #sidenav mode="over">
     <navigation></navigation>
-  </md-sidenav>
+  </mat-sidenav>
 
-  <md-toolbar color="primary">
+  <mat-toolbar color="primary">
     <span class="logo">CogQuiz</span>
 
     <div class="mat-toolbar-right">
-      <button md-icon-button routerLink="/profile">
-        <md-icon>person</md-icon>
-      </button>
-      <button md-icon-button (click)='logout()'>
-        <md-icon>exit_to_app</md-icon>
-      </button>
-    </div>
-  </md-toolbar>
 
-  <a class="menu-button" md-button (click)='sidenav.open();' (clickOutside)="sidenav.close()">
-    <md-icon class="hide-xs">play_arrow</md-icon>
-    <md-icon class="show-xs">more_vert</md-icon>
+      <button mat-icon-button routerLink="/profile">
+        <mat-icon>person</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)='logout()'>
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+
+    </div>
+    
+  </mat-toolbar>
+
+  <a class="menu-button" mat-button (click)='sidenav.open();' (clickOutside)="sidenav.close()">
+    <mat-icon class="hide-xs">play_arrow</mat-icon>
+    <mat-icon class="show-xs">more_vert</mat-icon>
   </a>
 
   <div class="content">
     <router-outlet></router-outlet>
   </div>
 
-</md-sidenav-container>
+</mat-sidenav-container>

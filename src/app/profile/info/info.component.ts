@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { ProfileService } from '../../_services/index';
 import { Profile } from '../../_models/index';
-
 
 @Component({
   selector: 'info',
@@ -18,7 +17,7 @@ export class InfoComponent implements OnInit {
   public constructor(
     private router: Router,
     private profileService: ProfileService,
-    private snackbar: MdSnackBar
+    private snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
