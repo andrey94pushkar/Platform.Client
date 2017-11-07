@@ -5,7 +5,7 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
          MatNativeDateModule, 
          MatRadioModule, 
@@ -23,7 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 
@@ -94,6 +94,7 @@ import { CreateTowerOfLondonComponent } from './create-tower-of-london/create-to
     MatIconModule,
     MatSidenavModule,
     MatCardModule,
+    MatStepperModule,
 
 
 
@@ -104,7 +105,8 @@ import { CreateTowerOfLondonComponent } from './create-tower-of-london/create-to
     HttpModule,
     PageSliderModule,
     Ng2PageScrollModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthGuard,
