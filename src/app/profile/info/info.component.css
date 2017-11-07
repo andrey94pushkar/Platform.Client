@@ -41,10 +41,6 @@ margin: 15px 0;
   text-align: center;
 }
 
-.mat-select {
-  margin-bottom: 22px;
-}
-
 .select-text {
   color: rgba(0,0,0,.38);
 }
@@ -52,6 +48,10 @@ margin: 15px 0;
 .input-small{
   width: 100px;
   margin-left: 20px;
+}
+
+.mat-card{
+  padding: 15px;
 }
 
 @media screen and (max-width: 600px) {

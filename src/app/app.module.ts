@@ -1,12 +1,33 @@
 // vendor
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CdkTableModule } from '@angular/cdk';
+import { CdkTableModule } from '@angular/cdk/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule, MdNativeDateModule, MdRadioModule } from '@angular/material';
+import { 
+         MatNativeDateModule, 
+         MatRadioModule, 
+         MatDatepickerModule,
+         MatTableModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+
+
+
+
+
 import { PageSliderModule } from 'ng2-page-slider';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
@@ -57,9 +78,26 @@ import { CreateTowerOfLondonComponent } from './create-tower-of-london/create-to
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
-    MdNativeDateModule,
-    MdRadioModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatTableModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatSortModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatCardModule,
+
+
+
+
     BrowserAnimationsModule,
     CdkTableModule,
     ClickOutsideModule,

@@ -1,4 +1,4 @@
-md-sidenav {
+mat-sidenav {
   position: relative;
   transform: translate3d(0,0,0);
   display: block;
@@ -28,7 +28,7 @@ md-sidenav {
               0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
-.menu-button md-icon{
+.menu-button mat-icon{
   line-height: 100vh;
   font-size: 32px;
   color: #ccc;
@@ -78,11 +78,11 @@ md-sidenav {
     min-height: 56px;
   }
 
-  md-sidenav{
+  mat-sidenav{
     width: 70%;
   }
   
-  .menu-button md-icon{
+  .menu-button mat-icon{
     line-height: unset;
     color: rgba(255,255,255,.87);
   }

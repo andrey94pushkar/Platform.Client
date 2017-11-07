@@ -1,107 +1,107 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!--
  <label>SET UP TEST INSTRUCTIONS:</label>
-<md-card>
+<mat-card>
     <form class="form-container" style="display: grid" #form='ngForm' (ngSubmit)='save()'>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Test name" name="testName">
-            </md-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Test name" name="testName">
+            </mat-input-container>
             <label>Enter Test Instructions to display:</label>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="In the beginning of the test:" name="feedbackText">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Enter Feedback Text:" name="feedbackText">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Enter Over Move Limit feedback: " name="overMoveFeedback">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Enter Over Time Limit feedback text:" name="overTimeFeedback">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Enter Test Instructions to display at the end of the test:" name="onEnd">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Enter Button Text that will show at the end of the test:" name="finishButtonText">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Enter Work Area label:" name="finishButtonText">
-            </md-input-container>
-            <md-input-container class="full-width">
-                <input mdInput placeholder="Enter Goal State area label:" name="finishButtonText">
-            </md-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="In the beginning of the test:" name="feedbackText">
+            </mat-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Enter Feedback Text:" name="feedbackText">
+            </mat-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Enter Over Move Limit feedback: " name="overMoveFeedback">
+            </mat-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Enter Over Time Limit feedback text:" name="overTimeFeedback">
+            </mat-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Enter Test Instructions to display at the end of the test:" name="onEnd">
+            </mat-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Enter Button Text that will show at the end of the test:" name="finishButtonText">
+            </mat-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Enter Work Area label:" name="finishButtonText">
+            </mat-input-container>
+            <mat-input-container class="full-width">
+                <input matInput placeholder="Enter Goal State area label:" name="finishButtonText">
+            </mat-input-container>
         
             <label>SET UP TEST PARAMETERS:</label>
-            <md-select class="full-width" placeholder="Number of Practice Rounds:" name="practiceRounds" >
-                <md-option value="0">
+            <mat-select class="full-width" placeholder="Number of Practice Rounds:" name="practiceRounds" >
+                <mat-option value="0">
                         0
-                </md-option>
-                <md-option value="1">
+                </mat-option>
+                <mat-option value="1">
                         1
-                </md-option>
-                <md-option value="2">
+                </mat-option>
+                <mat-option value="2">
                         2
-                </md-option>
-                <md-option value="3">
+                </mat-option>
+                <mat-option value="3">
                         3
-                </md-option>
-                <md-option value="4">
+                </mat-option>
+                <mat-option value="4">
                         4
-                </md-option>
-                <md-option value="5">
+                </mat-option>
+                <mat-option value="5">
                         5
-                </md-option>
-                <md-option value="6">
+                </mat-option>
+                <mat-option value="6">
                         6
-                </md-option>
-                <md-option value="7">
+                </mat-option>
+                <mat-option value="7">
                         7
-                </md-option>
-                <md-option value="8">
+                </mat-option>
+                <mat-option value="8">
                         8
-                </md-option>
-                <md-option value="9">
+                </mat-option>
+                <mat-option value="9">
                         9
-                </md-option>
-             </md-select>
-             <md-input-container class="full-width">
-                <input mdInput type="number" placeholder="Number of Test Rounds:"  name="numOfTestRounds">
-             </md-input-container>
-             <md-input-container class="full-width">
-                <input mdInput type="number" placeholder="Calculate Results From:"  name="CalculateFrom">
-             </md-input-container>
-             <md-input-container class="full-width">
-                <input mdInput type="number" placeholder="Time Out After (sec):"  name="TimeOutAfter">
-             </md-input-container>
-             <md-input-container class="full-width">
-                <input mdInput type="number" placeholder="Max Moves Allowed"  name="MaxMoves">
-             </md-input-container>
-             <md-input-container class="full-width">
-                <input mdInput type="number" placeholder="Countdown time (sec)"  name="Countdowntime">
-             </md-input-container>
-             <md-input-container class="full-width">
-                <input mdInput placeholder="Countdown Text:"  name="CountdownText">
-             </md-input-container>
-             <md-checkbox>Show Feedback</md-checkbox>
-             <md-checkbox>Display Result Page</md-checkbox>
+                </mat-option>
+             </mat-select>
+             <mat-input-container class="full-width">
+                <input matInput type="number" placeholder="Number of Test Rounds:"  name="numOfTestRounds">
+             </mat-input-container>
+             <mat-input-container class="full-width">
+                <input matInput type="number" placeholder="Calculate Results From:"  name="CalculateFrom">
+             </mat-input-container>
+             <mat-input-container class="full-width">
+                <input matInput type="number" placeholder="Time Out After (sec):"  name="TimeOutAfter">
+             </mat-input-container>
+             <mat-input-container class="full-width">
+                <input matInput type="number" placeholder="Max Moves Allowed"  name="MaxMoves">
+             </mat-input-container>
+             <mat-input-container class="full-width">
+                <input matInput type="number" placeholder="Countdown time (sec)"  name="Countdowntime">
+             </mat-input-container>
+             <mat-input-container class="full-width">
+                <input matInput placeholder="Countdown Text:"  name="CountdownText">
+             </mat-input-container>
+             <mat-checkbox>Show Feedback</mat-checkbox>
+             <mat-checkbox>Display Result Page</mat-checkbox>
              <div class="full-width">
-                <md-checkbox>Use Text-To-Speech</md-checkbox>
-                        <md-select class="full-width" name="TextToSpeech" >
-                                <md-option value="0">
+                <mat-checkbox>Use Text-To-Speech</mat-checkbox>
+                        <mat-select class="full-width" name="TextToSpeech" >
+                                <mat-option value="0">
                                         0
-                                </md-option>
-                                <md-option value="1">
+                                </mat-option>
+                                <mat-option value="1">
                                         1
-                                </md-option>
-                                <md-option value="2">
+                                </mat-option>
+                                <mat-option value="2">
                                         2
-                                </md-option>
-                                <md-option value="3">
+                                </mat-option>
+                                <mat-option value="3">
                                         3
-                                </md-option>
+                                </mat-option>
                                                 
-                        </md-select>
+                        </mat-select>
                 
              </div>
              <label>SET UP ROUND POSITIONS:</label>
@@ -109,7 +109,7 @@
 
             
     </form>
-</md-card> -->
+</mat-card> -->
 
 <div class="box">
     <div class="col-lg-12">

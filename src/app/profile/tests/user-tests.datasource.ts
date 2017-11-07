@@ -1,7 +1,7 @@
-import { DataSource } from '@angular/cdk';
+import { DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
-import { MdSort, MdDialog } from '@angular/material';
+import { MatSort, MatDialog } from '@angular/material';
 import { UserTestService } from '../../_services/index';
 import { UserTest } from '../../_models/index';
 
@@ -15,7 +15,7 @@ import 'rxjs/add/operator/switchMap';
  * should be rendered.
  */
 export class UserTestDataSource extends DataSource<any> {
-  constructor(private _userTestService: UserTestService, private _sort: MdSort) {
+  constructor(private _userTestService: UserTestService, private _sort: MatSort) {
     super();
   }
   _filterChange = new BehaviorSubject('');
@@ -25,7 +25,7 @@ export class UserTestDataSource extends DataSource<any> {
   /** Connect function called by the table to retrieve one stream containing the data to render. */
   connect(): Observable<UserTest[]> {
     const displayDataChanges = [
-      this._sort.mdSortChange,
+      this._sort.sortChange,
       this._filterChange
     ];
 
