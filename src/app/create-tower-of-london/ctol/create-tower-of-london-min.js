@@ -3,12 +3,12 @@ export var Ctol = (function () {
         initFunction: initFunction
     };
 
-    function initFunction() {
-        var superObj = {
-            arrStart: "",
-            arrFinish: "",
-            numMoves: 0
-        }
+    function initFunction(superObj) {
+        // var superObj = {
+        //     arrStart: "",
+        //     arrFinish: "",
+        //     numMoves: 0
+        // }
         var selected = null;
         var selectedR = null;
         var superArr = [];
@@ -50,8 +50,10 @@ export var Ctol = (function () {
         
         //prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
         //trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
-		var prct = 1;
-        var trl = 5;
+		// var prct = 1;
+        // var trl = 5;
+        var prct = parseInt(document.getElementsByName("practiceRounds")[0].textContent);
+        var trl = parseInt(document.getElementsByName("numOfTestRounds")[0].value);
         $('#makeAnother').hide();
         $("#success").hide();
         // $('#title').hide();
@@ -114,8 +116,8 @@ $('#SetupUpdate').click(function () {
     function updateValues() {
         //prct = parseInt($('#<%=ddlPractice.ClientID %> option:selected').text());
         //trl = parseInt($('#<%=ddlNumberGames.ClientID %> option:selected').text());
-        prct = 2;
-        trl = 5;
+        prct = parseInt(document.getElementsByName("practiceRounds")[0].textContent);
+        trl = parseInt(document.getElementsByName("numOfTestRounds")[0].value);
     }
 
     function data(id, value) {
@@ -172,25 +174,25 @@ $('#SetupUpdate').click(function () {
 
 
                 $('#numberOfMoves').val(num);
-                for (i = 0; i < arr.length; i++) {
+                for (var i = 0; i < arr.length; i++) {
                     if (i % 2 == 0) {
-                        id = arr[i].substr(arr[i].indexOf('p'), 8);
+                        var id = arr[i].substr(arr[i].indexOf('p'), 8);
                         p = paper.getById(id);
                     }
                     else {
-                        color = arr[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
+                        var color = arr[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
                         p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
                         array.push(new data(id, color));
                     }
                 }
 
-                for (i = 0; i < arr.length; i++) {
+                for (var i = 0; i < arr.length; i++) {
                     if (i % 2 == 0) {
-                        id = arrR[i].substr(arrR[i].indexOf('p'), 6);
+                        var id = arrR[i].substr(arrR[i].indexOf('p'), 6);
                         p = paperR.getById(id);
                     }
                     else {
-                        color = arrR[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
+                        var color = arrR[i].substr(8, arr[i].lastIndexOf('"')).replace(/['"']+/g, '');
                         p.attr({ fill: color, "stroke-width": "2", stroke: 'black' });
                         arrayR.push(new data(id, color));
                     }
@@ -235,6 +237,12 @@ $('#SetupUpdate').click(function () {
                             if (p.id != selected.id)
                                 p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
                         }
+
+                        array.forEach(function(item, i) {
+                              if (item.id == selected.id) {
+                                array.splice(i, 1);
+                              }
+                          });
         
                         array.push(new data(selected.id, "red"));
                     }
@@ -251,6 +259,11 @@ $('#SetupUpdate').click(function () {
                             if (p.id != selectedR.id)
                                 p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
                         }
+                        arrayR.forEach(function(item, i) {
+                            if (item.id == selectedR.id) {
+                                arrayR.splice(i, 1);
+                            }
+                        });
         
                         arrayR.push(new data(selectedR.id, "red"));
                     }
@@ -273,6 +286,11 @@ $('#SetupUpdate').click(function () {
                                 p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
         
                         }
+                        array.forEach(function(item, i) {
+                            if (item.id == selected.id) {
+                              array.splice(i, 1);
+                            }
+                        });
                         array.push(new data(selected.id, "blue"));
                     }
                     if (selectedR != null) {
@@ -290,6 +308,11 @@ $('#SetupUpdate').click(function () {
                                 p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
         
                         }
+                        arrayR.forEach(function(item, i) {
+                            if (item.id == selectedR.id) {
+                                arrayR.splice(i, 1);
+                            }
+                        });
                         arrayR.push(new data(selectedR.id, "blue"));
                     }
                 });
@@ -310,6 +333,11 @@ $('#SetupUpdate').click(function () {
                                 p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
         
                         }
+                        array.forEach(function(item, i) {
+                            if (item.id == selected.id) {
+                              array.splice(i, 1);
+                            }
+                        });
                         array.push(new data(selected.id, "green"));
                     }
                     if (selectedR != null) {
@@ -327,6 +355,11 @@ $('#SetupUpdate').click(function () {
                                 p.attr({ fill: "white", "stroke-width": "2", stroke: 'black' });
         
                         }
+                        arrayR.forEach(function(item, i) {
+                            if (item.id == selectedR.id) {
+                                arrayR.splice(i, 1);
+                            }
+                        });
                         arrayR.push(new data(selectedR.id, "green"));
                     }
                 });
@@ -758,6 +791,183 @@ $('#SetupUpdate').click(function () {
                 return ball;
             }
         }
+
+        $('#save').click(function () {
+            var error = "";
+
+            if ($('#numberOfMoves').val().length < 1) {
+                error = "! You need you set Number of moves for this round.<br />"
+            }
+            if (array.length != 3) {
+                error += "! You need you set all 3 beads for Start positions. <br />"
+
+            }
+            if (arrayR.length != 3) {
+                error += "! You need you set all 3 beads for End positions.<br />"
+
+            }
+            //var error = ""; //To Test
+            if (error.length > 0) {
+                $('#makeAnother').hide();
+                $('#MovesError').show();
+                $('#MovesError').html(error);
+            }
+
+            else {
+                $('#MovesError').hide();
+                // checkForChange();
+                superObj = {
+                    arrStart: (JSON.stringify(array)),
+                    arrFinish: (JSON.stringify(arrayR)),
+                    numMoves: $('#numberOfMoves').val()
+                }
+                var num; //Set Num;
+                if (what != "") {
+                    if (what == "prct") {
+                        num = parseInt($('#roundValue').val());
+                    }
+                    else if (what == "trl") {
+                        num = parseInt($('#roundValue').val()) + prct;
+                    }
+
+                    idItems.splice(num, 0, num);
+                    superArr.splice(num, 0, superObj);
+                    updateEditRow(idItems);
+                }
+
+                else {
+                    if (round != 0 || update == true) {
+
+                        num = round;
+                    }
+                    else {
+                        //superArr[roundCount - 1] = superObj;  //TODO: for test
+                        num = roundCount - 1;
+
+                    }
+                    superArr[num] = superObj;
+
+
+                    if (!$('#' + num + '').length) {
+                        if (num <= prct) {
+                            $('#pageNums').append('<input type="button" value=' + num + ' id=' + num + ' class="edit prct"/>');
+                            currPrct++;
+
+                        }
+
+                        else {
+                            $('#pageNums').append('<input type="button" value=' + num + ' id=' + num + ' class="edit trl"/>');
+                            currTrl++;
+                        }
+
+                        idItems.push(num);
+                        roundCount++;
+                    }
+                }
+
+                $("#success").show();
+                var message = "Success! The round was saved."
+                $("#success").html(message);
+
+                checkForChange();
+            }
+
+
+            $('.edit').bind("click", function () {
+                $("#success").hide();
+                round = this.value;
+                test(superArr, round);
+            });
+
+
+        });
+
+        $('#saveTest').click(function () {
+            
+
+            var error = "";
+
+            if (superArr.length == 0)
+                error += "You have not set up any moves."
+            
+
+            if (error != "") {
+                $('#MovesError').show();
+                $('#MovesError').html(error);
+            }
+            else {
+                $('#MovesError').html("");
+                $('#MovesError').hide();
+
+
+            //     var sendData = {
+            //         testName: $('#<%=testName.ClientID%>').val(),
+            //     instructions: $('#<%=instructions.ClientID%>').val(),
+            //     overMoves: $('#<%=overMoves.ClientID%>').val(),
+            //     overTime: $('#<%=overTime.ClientID%>').val(),
+            //     txtButton: $('#<%=txtButton.ClientID%>').val(),
+            //     txtFeedback: $('#<%=feedback.ClientID%>').val(),
+            //     instructionsFinish: $('#<%=instructionsFinish.ClientID%>').val(),
+            //     txtToSpeech: $('#<%=cbTextSpeech.ClientID %>').is(':checked'),
+            //     displayResultPage: $('#<%=displayResultPage.ClientID %>').is(':checked'),
+            //     prctRounds: $('#<%=ddlPractice.ClientID %> option:selected').text(),
+            //     testRounds: $('#<%=ddlNumberGames.ClientID %> option:selected').text(),
+            //    calcResFrom: $('#<%=ddlConuntFromRound.ClientID %> option:selected').text(),
+            //     countDownFrom: $('#<%=countDown.ClientID%>').val(),
+            //     timeOut: $('#<%=timeOutAfter.ClientID%>').val(),
+            //     maxMoves: $('#<%=maxMovesLimit.ClientID%>').val(),
+            //     showFeedback: $('#<%=showFeedback.ClientID %>').is(':checked'),
+            //     movesData: JSON.stringify(superArr),
+            //     language: $("#<%=select.ClientID%>").val(),
+            //     workTag: $("#<%=workArea.ClientID%>").val(),
+            //     goalTag: $("#<%=endArea.ClientID%>").val(),
+            //     countDownText: $("#<%=countDownText.ClientID%>").val()
+
+            //     }
+                var sendData = {
+                    testName: document.getElementsByName("testName")[0].value,
+                // instructions: document.getElementsByName("")[0].value,
+                overMoves: document.getElementsByName("overMoveFeedback")[0].value,
+                overTime: document.getElementsByName("overTimeFeedback")[0].value,
+                txtButton: document.getElementsByName("finishButtonText")[0].value,
+                txtFeedback: document.getElementsByName("feedbackText")[0].value,
+                instructionsFinish: document.getElementsByName("onEnd")[0].value,
+                txtToSpeech: document.getElementsByName("TextToSpeech")[0].value,
+                displayResultPage: document.getElementsByName("displayResultPage")[0].value,
+                prctRounds: document.getElementsByName("practiceRounds")[0].value,
+                testRounds: document.getElementsByName("numOfTestRounds")[0].value,
+                calcResFrom: document.getElementsByName("CalculateFrom")[0].value,
+                countDownFrom: document.getElementsByName("Countdowntime")[0].value,
+                timeOut: document.getElementsByName("TimeOutAfter")[0].value,
+                maxMoves: document.getElementsByName("MaxMoves")[0].value,
+                movesData: JSON.stringify(superArr),
+                // showFeedback: document.getElementsByName("")[0].value,
+                // language: document.getElementsByName("")[0].value,
+                // workTag: document.getElementsByName("")[0].value,
+                // goalTag: document.getElementsByName("")[0].value,
+                countDownText: document.getElementsByName("CountdownText")[0].value,
+                }
+                console.log(JSON.stringify(sendData));
+                // jQuery.ajax({
+                //     contentType: "application/json; charset=utf-8",
+                //     dataType: "json",
+                //     url: 'LondonModify.aspx/SaveResults',
+                //     dataType: 'json',
+                //     data: JSON.stringify(sendData),
+                //     type: 'POST',
+                //     success: function (resp) {
+
+                //         //request sent and response received.
+                //         var message = "Success! The test was saved."
+                //         $("#success").show();
+                //         $("#success").html(message);
+                //     },
+                //     error: function () {
+                //         alert("error saving the test; try again later")
+                //     }
+                // });
+            }
+        });
     }
 
 })();

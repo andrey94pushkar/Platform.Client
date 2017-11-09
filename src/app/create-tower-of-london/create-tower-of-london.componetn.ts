@@ -13,11 +13,14 @@ import { Ctol } from './ctol/create-tower-of-london-min';
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
     thirdFormGroup: FormGroup;
+    
 
-    public constructor(private _formBuilder: FormBuilder) { }
-
+    public constructor(private _formBuilder: FormBuilder) { 
+      
+    }
+    
       ngOnInit() {
-        Ctol.initFunction();
+        //Ctol.initFunction();
         this.firstFormGroup = this._formBuilder.group({
           firstCtrl: ['', Validators.required]
         });
@@ -27,6 +30,15 @@ import { Ctol } from './ctol/create-tower-of-london-min';
         this.thirdFormGroup = this._formBuilder.group({
           thirdCtrl: ['', Validators.required]
         });
+        
+      }
+      runScript(): void {
+        const superObj = {
+          arrStart: "",
+          arrFinish: "",
+          numMoves: 0
+      }
+        Ctol.initFunction(superObj);
       }
 
   }

@@ -142,7 +142,7 @@
 
                     <mat-checkbox>Show Feedback</mat-checkbox>
                     <br>
-                    <mat-checkbox>Display Result Page</mat-checkbox>
+                    <mat-checkbox name="displayResultPage">Display Result Page</mat-checkbox>
 
                     <div class="screen-width">
 
@@ -179,13 +179,22 @@
             </mat-step>
 
             <mat-step>
-                <ng-template matStepLabel>Set Up Round Positions</ng-template>
+                <ng-template matStepLabel >Set Up Round Positions</ng-template>
                 <div class="box">
-
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">Set Up
+                                <strong>Round Positions:</strong>
+                        </h2>
+                        <hr>
+                    </div>
                     <div class="alert alert-danger" id="MovesError" style="display: none;"></div>
-                    <div class="alert alert-success" id="success" style="display: none;"></div>
-
-                    <button mat-raised-button color="warn" id="SetupUpdate" type="button">Set Moves</button>
+                
+                    <div class="alert alert-success" id="success" style="display: none;">
+                    </div>
+                    <input id="runScript" class="btn  btn-success btn-xs" type="button" value="init scripts" (click)="runScript()">
+                    <input id="SetupUpdate" class="btn  btn-success btn-xs" type="button" value="Set Moves">
+                
                 
                     <div class="col-lg-12">
                         
@@ -221,6 +230,11 @@
                         <input id="save" class="btn  btn-success btn-xs" type="button" value="Save" style="display: none;">
                         <input id="delete" class="btn  btn-success btn-xs" type="button" value="Delete" style="display: none;">
                         <input id="makeAnother" class="btn btn-success btn-xs" type="button" value="Create" style="display: none;">
+                
+                    </div>
+                    <div class="col-lg-4 col-sm-offset-2">
+                        <input class=" btn btn-info btn-xs" id="viewTest" type="button" value="View Test" style="display: none;">
+                        <input class=" btn btn-danger btn-xs" id="saveTest" type="button" value="Save Test">
                 
                     </div>
                     <div class="col-lg-12" id="pageNums">
