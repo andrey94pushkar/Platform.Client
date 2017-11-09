@@ -395,13 +395,14 @@ footer {
     text-align: justify;
   }
   
-  .full-width {
-    width: 400px;
+  .fourth-width {
+    width: 20%;
     display: inline-block;
   }
   
-  .double-width {
-    width: 800px;
+  .main-width {
+    width: 32%;
+    display: inline-block;
   }
   
   .screen-width{
@@ -410,6 +411,7 @@ footer {
   
   .half-width{
     width: 50%;
+    display: inline-block;
   }
   
   .date-time {
@@ -450,6 +452,10 @@ footer {
       justify-content: space-between;
   }
   
+  .mat-step-header.cdk-keyboard-focused, .mat-step-header.cdk-program-focused, .mat-step-header:hover {
+    background-color: unset;
+}
+
   @media screen and (max-width: 600px) {
     .form-container {
         width: 100%;
