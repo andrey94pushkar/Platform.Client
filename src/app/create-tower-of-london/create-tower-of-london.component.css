@@ -395,6 +395,7 @@ footer {
     text-align: justify;
   }
   
+
   .fourth-width {
     width: 20%;
     display: inline-block;
@@ -455,7 +456,6 @@ footer {
   .mat-step-header.cdk-keyboard-focused, .mat-step-header.cdk-program-focused, .mat-step-header:hover {
     background-color: unset;
 }
-
   @media screen and (max-width: 600px) {
     .form-container {
         width: 100%;
