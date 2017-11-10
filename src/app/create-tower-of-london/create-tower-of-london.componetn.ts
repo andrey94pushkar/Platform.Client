@@ -13,7 +13,6 @@ import { Ctol } from './ctol/create-tower-of-london-min';
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
     thirdFormGroup: FormGroup;
-    
 
     public constructor(private _formBuilder: FormBuilder) { 
       
