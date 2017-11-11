@@ -926,26 +926,26 @@ $('#SetupUpdate').click(function () {
             //     }
                 var sendData = {
                     testName: document.getElementsByName("testName")[0].value,
-                // instructions: document.getElementsByName("")[0].value,
+                instructions: document.getElementsByName("beginingText")[0].value,
                 overMoves: document.getElementsByName("overMoveFeedback")[0].value,
                 overTime: document.getElementsByName("overTimeFeedback")[0].value,
                 txtButton: document.getElementsByName("finishButtonText")[0].value,
                 txtFeedback: document.getElementsByName("feedbackText")[0].value,
                 instructionsFinish: document.getElementsByName("onEnd")[0].value,
                 txtToSpeech: document.getElementsByName("TextToSpeech")[0].value,
-                displayResultPage: document.getElementsByName("displayResultPage")[0].value,
                 prctRounds: document.getElementsByName("practiceRounds")[0].value,
                 testRounds: document.getElementsByName("numOfTestRounds")[0].value,
                 calcResFrom: document.getElementsByName("CalculateFrom")[0].value,
                 countDownFrom: document.getElementsByName("Countdowntime")[0].value,
                 timeOut: document.getElementsByName("TimeOutAfter")[0].value,
                 maxMoves: document.getElementsByName("MaxMoves")[0].value,
-                movesData: JSON.stringify(superArr),
-                // showFeedback: document.getElementsByName("")[0].value,
-                // language: document.getElementsByName("")[0].value,
-                // workTag: document.getElementsByName("")[0].value,
-                // goalTag: document.getElementsByName("")[0].value,
                 countDownText: document.getElementsByName("CountdownText")[0].value,
+                showFeedback: document.getElementsByName("ShowFeedback")[1].checked,
+                displayResultPage: document.getElementsByName("displayResultPage")[1].checked,
+                language: document.getElementsByName("TextToSpeech")[0].value,
+                workTag: document.getElementsByName("workAreaLabel")[0].value,
+                goalTag: document.getElementsByName("goalAreaText")[0].value,
+                movesData: JSON.stringify(superArr),
                 }
                 console.log(JSON.stringify(sendData));
                 // jQuery.ajax({
