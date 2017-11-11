@@ -61,7 +61,8 @@ export var Ctol = (function () {
         var array = [];
         var arrayR = [];
 
-$('#SetupUpdate').click(function () {
+// $('#SetupUpdate').click(function () {
+    function SetupUpdate() {
             $('#SetupUpdate').hide();
             $('#delete').hide();
 
@@ -110,7 +111,10 @@ $('#SetupUpdate').click(function () {
                 $('#save').show();
             });
 
-        });
+        // });
+        }
+
+
    // };
 
     function updateValues() {
@@ -968,6 +972,7 @@ $('#SetupUpdate').click(function () {
                 // });
             }
         });
+        SetupUpdate();
     }
 
 })();
